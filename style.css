@@ -1,0 +1,1910 @@
+/* ============================================
+   СБРОС И БАЗОВЫЕ СТИЛИ
+============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+:root {
+    /* ЦВЕТОВАЯ ПАЛИТРА - ПРОЗРАЧНАЯ ТЕМА */
+    --bg-primary: rgba(10, 10, 20, 0.95);
+    --bg-secondary: rgba(25, 25, 40, 0.8);
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-card-hover: rgba(255, 255, 255, 0.1);
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --accent: rgba(0, 180, 255, 0.8);         /* Голубой */
+    --accent-secondary: rgba(255, 70, 130, 0.8); /* Розово-красный */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glow: 0 0 30px rgba(0, 180, 255, 0.4);
+    --border-radius: 20px;
+    --section-spacing: 100px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(30, 30, 60, 0.4) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(60, 20, 80, 0.3) 0%, transparent 30%);
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   НАВИГАЦИЯ ФИКСИРОВАННАЯ
+============================================ */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(15, 15, 30, 0.85);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1.2rem 0;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(0, 180, 255, 0.05);
+}
+
+/* ============================================
+   ГЛАВНЫЙ ЭКРАН
+============================================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+/* Ключевое исправление: убираем padding-top у body и добавляем отступ сверху для героя */
+.hero-content {
+    max-width: 900px;
+    z-index: 2;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.8rem, 10vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.glitch-text {
+    color: var(--accent);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-button:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: var(--glow);
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* ============================================
+   СЕКЦИИ - ОТСТУП ДЛЯ ФИКСИРОВАННОГО МЕНЮ
+============================================ */
+.section {
+    padding: var(--section-spacing) 0;
+}
+
+/* Первая секция (Персонажи) получает дополнительный отступ сверху */
+#characters {
+    padding-top: calc(var(--section-spacing) + 80px);
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-descr {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+/* Кнопка "Изучать энциклопедию" с изменением цвета темы */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Для синей темы */
+    color: #00b4ff;
+    border: 2px solid #00b4ff;
+}
+
+/* Для красной темы */
+body.red-theme .cta-button {
+    color: #ff3232;
+    border-color: #ff3232;
+}
+
+/* Ховер для синей темы */
+.cta-button:hover {
+    background: #00b4ff;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Ховер для красной темы */
+body.red-theme .cta-button:hover {
+    background: #ff3232;
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 50, 50, 0.4);
+}
+/* ============================================
+   СЕТКА КАРТОЧЕК
+============================================ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+/* ============================================
+   КАРТОЧКИ НА ГЛАВНОЙ (обновленные стили)
+============================================ */
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-img-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    /* Повторяем форму карточки для изображения */
+    border-radius: 18px 3px 0 0;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    /* Стиль для placeholder */
+    background: linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-rating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-secondary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 5px 20px rgba(255, 70, 130, 0.4);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-name {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-meta span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Цвета для ссылок на персонажей */
+.character-link[data-target*="character-1"] { color: #4cc9f0 !important; } /* Годзё */
+.character-link[data-target*="character-2"] { color: #ff0055 !important; } /* Сукуна */
+.character-link[data-target*="character-3"] { color: #9d4edd !important; } /* Юта */
+.character-link[data-target*="character-4"] { color: #f72585 !important; } /* Юдзи */
+.character-link[data-target*="character-5"] { color: #5d6147 !important; } /* Кендзяку */
+.character-link[data-target*="character-6"] { color: #6363ca !important; } /* Мегуми */
+.character-link[data-target*="character-7"] { color: #8f207c !important; } /* Махито */
+.character-link[data-target*="character-8"] { color: #118ab2 !important; } /* Тоджи */
+
+.character-link {
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    transition: all 0.2s;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.character-link:hover {
+    opacity: 0.8;
+    border-bottom-style: solid;
+}
+
+/* ============================================
+   МОДАЛЬНЫЕ ОКНА (POP-UPS)
+============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transform: translateY(50px) scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.modal-close {
+    color: var(--text-secondary);
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+    padding: 0 10px;
+    background: none;
+    border: none;
+}
+
+.modal-close:hover {
+    color: var(--accent-secondary);
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.modal-hero {
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-rating, .modal-meta {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-secondary);
+}
+
+.modal-rating span, .modal-meta span {
+    color: var(--accent-secondary);
+    font-size: 1.4rem;
+    margin-left: 5px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.info-section p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    color: var(--text-secondary);
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.info-section li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.info-section strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.related-links a {
+    display: inline-block;
+    background: rgba(0, 180, 255, 0.1);
+    color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid rgba(0, 180, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.related-links a:hover {
+    background: rgba(0, 180, 255, 0.2);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   ПОДВАЛ
+============================================ */
+.footer {
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.footer-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+============================================ */
+@media (max-width: 992px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-top: 70px; /* Меньше на мобильных */
+    }
+    
+    #characters {
+        padding-top: calc(var(--section-spacing) + 70px);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-list {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+    
+    .modal-header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 2rem;
+    }
+    
+    .modal-body {
+        padding: 25px;
+    }
+    
+    .modal-hero-img {
+        height: 250px;
+    }
+    
+    .modal-rating, .modal-meta {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        display: inline-block;
+        margin-top: 15px;
+    }
+}
+/* ============================================
+   ЦВЕТА ЗАГОЛОВКОВ В МОДАЛЬНЫХ ОКНАХ
+============================================ */
+
+/* Сатору Годзё (голубой #4cc9f0) */
+#modal-character-1 .info-section h3 {
+    color: #4cc9f0 !important;
+}
+#modal-character-1 .modal-rating span,
+#modal-character-1 .modal-meta span {
+    color: #4cc9f0 !important;
+    border-color: #4cc9f0 !important;
+}
+
+/* Рёмэн Сукуна (красный #ff0055) */
+#modal-character-2 .info-section h3 {
+    color: #ff0055 !important;
+}
+#modal-character-2 .modal-rating span,
+#modal-character-2 .modal-meta span {
+    color: #ff0055 !important;
+    border-color: #ff0055 !important;
+}
+
+/* Юта Оккоцу (фиолетовый #9d4edd) */
+#modal-character-3 .info-section h3 {
+    color: #9d4edd !important;
+}
+#modal-character-3 .modal-rating span,
+#modal-character-3 .modal-meta span {
+    color: #9d4edd !important;
+    border-color: #9d4edd !important;
+}
+
+/* Юдзи Итадори (розовый #f72585) */
+#modal-character-4 .info-section h3 {
+    color: #f72585 !important;
+}
+#modal-character-4 .modal-rating span,
+#modal-character-4 .modal-meta span {
+    color: #f72585 !important;
+    border-color: #f72585 !important;
+}
+
+/* Кендзяку (оливковый #5d6147) */
+#modal-character-5 .info-section h3 {
+    color: #5d6147 !important;
+}
+#modal-character-5 .modal-rating span,
+#modal-character-5 .modal-meta span {
+    color: #5d6147 !important;
+    border-color: #5d6147 !important;
+}
+
+/* Мегуми Фусигуро (синий #1919ee) */
+#modal-character-6 .info-section h3 {
+    color: #6363ca !important;
+}
+#modal-character-6 .modal-rating span,
+#modal-character-6 .modal-meta span {
+    color: #6363ca !important;
+    border-color: #6363ca !important;
+}
+
+/* Махито (пурпурный #8f207c) */
+#modal-character-7 .info-section h3 {
+    color: #8f207c !important;
+}
+#modal-character-7 .modal-rating span,
+#modal-character-7 .modal-meta span {
+    color: #8f207c !important;
+    border-color: #8f207c !important;
+}
+
+/* Тоджи Фусигуро (синий #118ab2) */
+#modal-character-8 .info-section h3 {
+    color: #118ab2 !important;
+}
+#modal-character-8 .modal-rating span,
+#modal-character-8 .modal-meta span {
+    color: #118ab2 !important;
+    border-color: #118ab2 !important;
+}
+
+/* Техники (используют цвет основного владельца) */
+#modal-technique-1 .info-section h3 { color: #4cc9f0 !important; } /* Бесконечность (Годзё) */
+#modal-technique-2 .info-section h3 { color: #ff0055 !important; } /* Мировой разрез (Сукуна) */
+#modal-technique-3 .info-section h3 { color: #f72585 !important; } /* Кулак дивергента (Юдзи) */
+#modal-technique-4 .info-section h3 { color: #f72585 !important; } /* Черная молния (Юдзи) */
+#modal-technique-5 .info-section h3 { color: #8f207c !important; } /* Инертная трансформация (Махито) */
+#modal-technique-6 .info-section h3 { color: #6363ca !important; } /* Десять теней (Мегуми) */
+#modal-technique-7 .info-section h3 { color: #9d4edd !important; } /* Копирование (Юта) */
+#modal-technique-8 .info-section h3 { color: #4cc9f0 !important; } /* Синий,Красный,Фиолетовый (Годзё) */
+
+/* Территории (используют цвет основного владельца) */
+#modal-domain-1 .info-section h3 { color: #4cc9f0 !important; } /* Безграничная пустота (Годзё) */
+#modal-domain-2 .info-section h3 { color: #ff0055 !important; } /* Гробница Зла (Сукуна) */
+#modal-domain-3 .info-section h3 { color: #9d4edd !important; } /* Истинная взаимная любовь (Юта) */
+#modal-domain-4 .info-section h3 { color: #f72585 !important; } /* Территория родного края (Юдзи) */
+
+/* ============================================
+   АУРА ВОКРУГ МОДАЛЬНЫХ ОКОН
+============================================ */
+
+/* Аура для персонажей */
+#modal-character-1 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(76, 201, 240, 0.3), 
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-1 3s infinite alternate;
+}
+
+#modal-character-2 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(255, 0, 85, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-2 3s infinite alternate;
+}
+
+#modal-character-3 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(157, 78, 221, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-3 3s infinite alternate;
+}
+
+#modal-character-4 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(247, 37, 133, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-4 3s infinite alternate;
+}
+
+#modal-character-5 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(93, 97, 71, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-5 3s infinite alternate;
+}
+
+#modal-character-6 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(85, 117, 206, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-6 3s infinite alternate;
+}
+
+#modal-character-7 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(143, 32, 124, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-7 3s infinite alternate;
+}
+
+#modal-character-8 .modal-content {
+    box-shadow: 0 0 60px 20px rgba(17, 138, 178, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-8 3s infinite alternate;
+}
+
+/* Аура для техник */
+#modal-technique-1 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(76, 201, 240, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-1 3s infinite alternate;
+}
+#modal-technique-2 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(255, 0, 85, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-2 3s infinite alternate;
+}
+#modal-technique-3 .modal-content,
+#modal-technique-4 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(247, 37, 133, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-4 3s infinite alternate;
+}
+#modal-technique-5 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(143, 32, 124, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-7 3s infinite alternate;
+}
+#modal-technique-6 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(25, 25, 238, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-6 3s infinite alternate;
+}
+#modal-technique-7 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(157, 78, 221, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-3 3s infinite alternate;
+}
+#modal-technique-8 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(76, 201, 240, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-1 3s infinite alternate;
+}
+
+/* Аура для территорий */
+#modal-domain-1 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(76, 201, 240, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-1 3s infinite alternate;
+}
+#modal-domain-2 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(255, 0, 85, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-2 3s infinite alternate;
+}
+#modal-domain-3 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(157, 78, 221, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-3 3s infinite alternate;
+}
+#modal-domain-4 .modal-content { 
+    box-shadow: 0 0 60px 20px rgba(247, 37, 133, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    animation: aura-pulse-4 3s infinite alternate;
+}
+
+/* Анимации пульсации для каждого цвета */
+@keyframes aura-pulse-1 {
+    0% { box-shadow: 0 0 40px 10px rgba(76, 201, 240, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(76, 201, 240, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-2 {
+    0% { box-shadow: 0 0 40px 10px rgba(255, 0, 85, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(255, 0, 85, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-3 {
+    0% { box-shadow: 0 0 40px 10px rgba(157, 78, 221, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(157, 78, 221, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-4 {
+    0% { box-shadow: 0 0 40px 10px rgba(247, 37, 133, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(247, 37, 133, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-5 {
+    0% { box-shadow: 0 0 40px 10px rgba(93, 97, 71, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(93, 97, 71, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-6 {
+    0% { box-shadow: 0 0 40px 10px rgba(68, 130, 211, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(45, 45, 177, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-7 {
+    0% { box-shadow: 0 0 40px 10px rgba(143, 32, 124, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(143, 32, 124, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes aura-pulse-8 {
+    0% { box-shadow: 0 0 40px 10px rgba(17, 138, 178, 0.2), 0 30px 80px rgba(0, 0, 0, 0.5); }
+    100% { box-shadow: 0 0 80px 30px rgba(17, 138, 178, 0.4), 0 30px 80px rgba(0, 0, 0, 0.5); }
+}
+/* ============================================
+   ВИДЕО-ФОН НА ГЛАВНОМ ЭКРАНЕ
+============================================ */
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Эффект затемнения видео*/
+    filter: brightness(0.4) contrast(1.1);
+    /* Плавное появление */
+    animation: video-fade-in 2s ease-out;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 20, 0.7) 0%,
+        rgba(10, 10, 20, 0.3) 50%,
+        rgba(10, 10, 20, 0.9) 100%
+    );
+    z-index: 1;
+}
+
+/* Анимация появления видео */
+@keyframes video-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Эффект "бликов" поверх видео */
+.video-background::before,
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    z-index: 2;
+    animation: light-sweep 8s infinite linear;
+    pointer-events: none;
+}
+
+.video-background::after {
+    animation-delay: 4s; /* Второй блик с задержкой */
+    opacity: 0.7;
+}
+
+/* Анимация движения бликов */
+@keyframes light-sweep {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+    }
+    100% {
+        transform: translateX(100%) skewX(-15deg);
+    }
+}
+
+/* Улучшаем контрастность текста поверх видео */
+.hero-content {
+    position: relative;
+    z-index: 3; /* Текст поверх видео и оверлея */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/* ============================================
+   ОПТИМИЗИРОВАННЫЙ ДИЗАЙН КАРТОЧЕК
+============================================ */
+
+/* Новая форма карточек - скошенные углы */
+.card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    
+    /* Новая форма - скошенный правый верхний угол */
+    border-radius: 20px 5px 20px 20px;
+    
+    /* Простая тень */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Оптимизация для GPU */
+    will-change: transform, box-shadow, border-color;
+}
+
+/* Декоративная линия в правом верхнем углу */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.1) 50%);
+    z-index: 1;
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+/* Базовое состояние при наведении */
+.card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-8px) scale(1.02);
+    border-width: 3px;
+}
+
+/* СИНЯЯ ТЕМА - упрощенные эффекты */
+body.blue-theme .card:hover {
+    border-color: #00b4ff;
+    box-shadow: 0 12px 30px rgba(0, 180, 255, 0.25);
+}
+
+body.blue-theme .card::before {
+    background: linear-gradient(135deg, transparent 50%, rgba(0, 180, 255, 0.15) 50%);
+}
+
+body.blue-theme .card:hover::before {
+    background: linear-gradient(135deg, transparent 50%, rgba(0, 180, 255, 0.3) 50%);
+}
+
+/* КРАСНАЯ ТЕМА - упрощенные эффекты */
+body.red-theme .card:hover {
+    border-color: #ff3232;
+    box-shadow: 0 12px 30px rgba(255, 50, 50, 0.25);
+}
+
+body.red-theme .card::before {
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 50, 50, 0.15) 50%);
+}
+
+body.red-theme .card:hover::before {
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 50, 50, 0.3) 50%);
+}
+
+/* Упрощенные стили для изображений */
+.card-img-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 18px 3px 0 0;
+}
+
+/* Оптимизированный рейтинг */
+.card-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent-secondary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 3px 10px rgba(255, 70, 130, 0.3);
+    font-family: 'Orbitron', sans-serif;
+    transform: rotate(-5deg);
+    transition: transform 0.2s ease;
+}
+
+.card:hover .card-rating {
+    transform: rotate(0deg) scale(1.05);
+}
+/* ============================================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМ
+============================================ */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+.theme-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   СИНЯЯ ТЕМА (по умолчанию)
+============================================ */
+:root {
+    /* СИНИЕ ЦВЕТА */
+    --bg-primary: rgba(10, 15, 30, 0.95);
+    --bg-secondary: rgba(20, 30, 60, 0.8);
+    --bg-card: rgba(30, 40, 80, 0.1);
+    --bg-card-hover: rgba(40, 60, 120, 0.2);
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(200, 220, 255, 0.7);
+    --accent: rgba(0, 150, 255, 0.9);         /* Яркий синий */
+    --accent-secondary: rgba(100, 200, 255, 0.8); /* Светло-синий */
+    --border-color: rgba(0, 100, 200, 0.3);
+    --glow: 0 0 40px rgba(0, 150, 255, 0.4);
+    
+    /* Остальные переменные оставляем как есть */
+    --border-radius: 20px;
+    --section-spacing: 100px;
+}
+
+/* Обновляем фон сайта для синей темы */
+body.blue-theme {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 50, 100, 0.4) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(0, 80, 150, 0.3) 0%, transparent 30%);
+}
+
+/* Синее свечение для кнопок и элементов */
+.nav-link:hover, .nav-link:focus {
+    color: #00b4ff;
+    border-color: #00b4ff;
+    background: rgba(0, 180, 255, 0.1);
+}
+
+.cta-button {
+    color: #00b4ff;
+    border-color: #00b4ff;
+}
+
+.cta-button:hover {
+    background: #00b4ff;
+}
+
+/* Синие заголовки секций */
+.section-title {
+    background: linear-gradient(90deg, #00b4ff, #0095ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   КРАСНАЯ ТЕМА
+============================================ */
+body.red-theme {
+    /* КРАСНЫЕ ЦВЕТА */
+    --bg-primary: rgba(30, 10, 15, 0.95);
+    --bg-secondary: rgba(60, 20, 30, 0.8);
+    --bg-card: rgba(80, 30, 40, 0.1);
+    --bg-card-hover: rgba(120, 40, 60, 0.2);
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 200, 200, 0.7);
+    --accent: rgba(255, 50, 50, 0.9);         /* Яркий красный */
+    --accent-secondary: rgba(255, 100, 100, 0.8); /* Светло-красный */
+    --border-color: rgba(200, 0, 0, 0.3);
+    --glow: 0 0 40px rgba(255, 50, 50, 0.4);
+    
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(100, 0, 0, 0.4) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(150, 0, 50, 0.3) 0%, transparent 30%);
+}
+
+/* Красные заголовки секций для красной темы */
+body.red-theme .section-title {
+    background: linear-gradient(90deg, #ff3232, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   ВИДЕО ДЛЯ КРАСНОЙ ТЕМЫ
+============================================ */
+.red-video {
+    display: none;
+}
+
+body.red-theme .blue-video {
+    display: none;
+}
+
+body.red-theme .red-video {
+    display: block;
+}
+/* Дополнительные синие акценты */
+body.blue-theme .card-rating {
+    background: linear-gradient(135deg, #00b4ff, #0095ff);
+}
+
+body.blue-theme .modal-rating,
+body.blue-theme .modal-meta {
+    border-color: #00b4ff;
+}
+
+body.blue-theme .modal-rating span,
+body.blue-theme .modal-meta span {
+    color: #00b4ff;
+}
+
+body.blue-theme .related-links a {
+    background: rgba(0, 180, 255, 0.15);
+    border-color: rgba(0, 180, 255, 0.4);
+}
+
+/* Красные акценты для красной темы */
+body.red-theme .card-rating {
+    background: linear-gradient(135deg, #ff3232, #ff0000);
+}
+
+body.red-theme .modal-rating,
+body.red-theme .modal-meta {
+    border-color: #ff3232;
+}
+
+body.red-theme .modal-rating span,
+body.red-theme .modal-meta span {
+    color: #ff3232;
+}
+
+body.red-theme .related-links a {
+    background: rgba(255, 50, 50, 0.15);
+    border-color: rgba(255, 50, 50, 0.4);
+}
+/* ============================================
+   МУЗЫКАЛЬНЫЕ КАРТОЧКИ
+============================================ */
+
+/* Иконка воспроизведения на музыкальных карточках */
+.music-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.music-card:hover .music-play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Синяя тема для музыкальных карточек */
+body.blue-theme .music-play-icon {
+    background: rgba(0, 180, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+}
+
+/* Красная тема для музыкальных карточек */
+body.red-theme .music-play-icon {
+    background: rgba(255, 50, 50, 0.8);
+    box-shadow: 0 0 20px rgba(255, 50, 50, 0.4);
+}
+
+/* ============================================
+   ВИДЕО СЕКЦИЯ В МОДАЛЬНЫХ ОКНАХ
+============================================ */
+
+.music-video-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.music-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    border-radius: 15px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+}
+
+/* ============================================
+   КАСТОМНЫЙ МУЗЫКАЛЬНЫЙ ПЛЕЕР
+============================================ */
+
+.custom-music-player {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+}
+
+.hidden-audio {
+    display: none;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Информация о треке */
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.track-cover {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.track-cover .cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl-effect {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: relative;
+    animation: vinyl-spin 3s linear infinite;
+}
+
+.vinyl-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+@keyframes vinyl-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Аудио визуализатор */
+.audio-visualizer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Показываем визуализатор только когда музыка играет */
+.track-cover.playing .audio-visualizer {
+    opacity: 1;
+}
+
+.visualizer-bar {
+    width: 4px;
+    background: linear-gradient(to top, var(--accent), var(--accent-secondary));
+    border-radius: 2px;
+    height: 10%;
+    animation: visualizer-pulse 0.6s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/* Разные задержки для каждой полоски */
+.visualizer-bar:nth-child(1) {
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+}
+
+.visualizer-bar:nth-child(2) {
+    animation-delay: 0.1s;
+    animation-duration: 0.7s;
+}
+
+.visualizer-bar:nth-child(3) {
+    animation-delay: 0.2s;
+    animation-duration: 0.6s;
+}
+
+.visualizer-bar:nth-child(4) {
+    animation-delay: 0.15s;
+    animation-duration: 0.65s;
+}
+
+.visualizer-bar:nth-child(5) {
+    animation-delay: 0.05s;
+    animation-duration: 0.55s;
+}
+
+/* Анимация пульсации полосок */
+@keyframes visualizer-pulse {
+    0%, 100% {
+        height: 20%;
+    }
+    25% {
+        height: 60%;
+    }
+    50% {
+        height: 80%;
+    }
+    75% {
+        height: 40%;
+    }
+}
+
+/* Более интенсивная анимация для синей темы */
+body.blue-theme .visualizer-bar {
+    background: linear-gradient(to top, #00b4ff, #00d4ff);
+    box-shadow: 0 0 10px rgba(0, 180, 255, 0.6);
+}
+
+/* Более интенсивная анимация для красной темы */
+body.red-theme .visualizer-bar {
+    background: linear-gradient(to top, #ff3232, #ff5555);
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.6);
+}
+
+.track-details {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.track-artist {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+
+.track-album {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Управление плеером */
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.play-pause-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Неактивные кнопки навигации */
+.control-btn[disabled],
+.control-btn:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}
+
+.control-btn.disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed !important;
+}
+
+/* Прогресс бар */
+.progress-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.time {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: 'Orbitron', sans-serif;
+    min-width: 40px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+/* Громкость */
+.volume-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-icon {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.volume-icon:hover {
+    color: var(--accent);
+}
+
+.volume-bar {
+    width: 80px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.volume-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 10%; /* 10% по умолчанию */
+    transition: width 0.1s ease;
+}
+
+.volume-handle {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* 10% по умолчанию */
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.volume-bar:hover .volume-handle {
+    opacity: 1;
+}
+
+/* Описание трека */
+.track-description {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.track-description p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .music-video-section {
+        height: 250px;
+    }
+    
+    .player-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .track-cover {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    
+    .player-controls {
+        gap: 15px;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .play-pause-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .progress-section {
+        gap: 10px;
+    }
+    
+    .volume-section {
+        justify-content: center;
+    }
+}
+
+/* 1. САТОРУ ГОДЗЁ - ТЕМНО-СИНИЙ С ГОЛУБЫМ */
+#modal-character-1 .modal-content,
+#modal-technique-1 .modal-content,
+#modal-domain-1 .modal-content,
+#modal-technique-8 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(10, 25, 50, 0.95) 0%,
+        rgba(15, 40, 80, 0.95) 100%) !important;
+    border: 3px solid #4cc9f0 !important;
+}
+
+#modal-character-1 .modal-header,
+#modal-technique-1 .modal-header,
+#modal-domain-1 .modal-header,
+#modal-technique-8 .modal-header {
+    background: rgba(76, 201, 240, 0.2) !important;
+    border-bottom: 3px solid #4cc9f0 !important;
+}
+
+#modal-character-1 .modal-header h2,
+#modal-technique-1 .modal-header h2,
+#modal-domain-1 .modal-header h2,
+#modal-technique-8 .modal-header h2 {
+    color: #4cc9f0 !important;
+}
+
+/* 2. СУКУНА - ТЕМНО-КРАСНЫЙ С КРАСНЫМ */
+#modal-character-2 .modal-content,
+#modal-technique-2 .modal-content,
+#modal-domain-2 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(30, 0, 10, 0.95) 0%,
+        rgba(50, 0, 20, 0.95) 100%) !important;
+    border: 3px solid #ff0055 !important;
+}
+
+#modal-character-2 .modal-header,
+#modal-technique-2 .modal-header,
+#modal-domain-2 .modal-header {
+    background: rgba(255, 0, 85, 0.2) !important;
+    border-bottom: 3px solid #ff0055 !important;
+}
+
+#modal-character-2 .modal-header h2,
+#modal-technique-2 .modal-header h2,
+#modal-domain-2 .modal-header h2 {
+    color: #ff0055 !important;
+}
+
+/* 3. ЮТА ОККОЦУ - ТЕМНО-ФИОЛЕТОВЫЙ С ФИОЛЕТОВЫМ */
+#modal-character-3 .modal-content,
+#modal-technique-7 .modal-content,
+#modal-domain-3 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(30, 10, 40, 0.95) 0%,
+        rgba(40, 15, 60, 0.95) 100%) !important;
+    border: 3px solid #9d4edd !important;
+}
+
+#modal-character-3 .modal-header,
+#modal-technique-7 .modal-header,
+#modal-domain-3 .modal-header {
+    background: rgba(157, 78, 221, 0.2) !important;
+    border-bottom: 3px solid #9d4edd !important;
+}
+
+#modal-character-3 .modal-header h2,
+#modal-technique-7 .modal-header h2,
+#modal-domain-3 .modal-header h2 {
+    color: #9d4edd !important;
+}
+
+/* 4. ЮДЗИ ИТАДОРИ - ТЕМНО-РОЗОВЫЙ С РОЗОВЫМ */
+#modal-character-4 .modal-content,
+#modal-technique-3 .modal-content,
+#modal-technique-4 .modal-content,
+#modal-domain-4 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(40, 5, 25, 0.95) 0%,
+        rgba(60, 10, 35, 0.95) 100%) !important;
+    border: 3px solid #f72585 !important;
+}
+
+#modal-character-4 .modal-header,
+#modal-technique-3 .modal-header,
+#modal-technique-4 .modal-header,
+#modal-domain-4 .modal-header {
+    background: rgba(247, 37, 133, 0.2) !important;
+    border-bottom: 3px solid #f72585 !important;
+}
+
+#modal-character-4 .modal-header h2,
+#modal-technique-3 .modal-header h2,
+#modal-technique-4 .modal-header h2,
+#modal-domain-4 .modal-header h2 {
+    color: #f72585 !important;
+}
+
+/* 5. КЕНДЗЯКУ - ТЕМНО-ОЛИВКОВЫЙ С ОЛИВКОВЫМ */
+#modal-character-5 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(30, 35, 20, 0.95) 0%,
+        rgba(40, 45, 25, 0.95) 100%) !important;
+    border: 3px solid #5d6147 !important;
+}
+
+#modal-character-5 .modal-header {
+    background: rgba(93, 97, 71, 0.2) !important;
+    border-bottom: 3px solid #5d6147 !important;
+}
+
+#modal-character-5 .modal-header h2 {
+    color: #5d6147 !important;
+}
+
+/* 6. МЕГУМИ - ТЕМНО-СИНИЙ С СИНИМ */
+#modal-character-6 .modal-content,
+#modal-technique-6 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(10, 15, 40, 0.95) 0%,
+        rgba(15, 20, 60, 0.95) 100%) !important;
+    border: 3px solid #1919ee !important;
+}
+
+#modal-character-6 .modal-header,
+#modal-technique-6 .modal-header {
+    background: rgba(25, 25, 238, 0.2) !important;
+    border-bottom: 3px solid #1919ee !important;
+}
+
+#modal-character-6 .modal-header h2,
+#modal-technique-6 .modal-header h2 {
+    color: #1919ee !important;
+}
+
+/* 7. МАХИТО - ТЕМНО-ПУРПУРНЫЙ С ПУРПУРНЫМ */
+#modal-character-7 .modal-content,
+#modal-technique-5 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(35, 10, 30, 0.95) 0%,
+        rgba(45, 15, 40, 0.95) 100%) !important;
+    border: 3px solid #8f207c !important;
+}
+
+#modal-character-7 .modal-header,
+#modal-technique-5 .modal-header {
+    background: rgba(143, 32, 124, 0.2) !important;
+    border-bottom: 3px solid #8f207c !important;
+}
+
+#modal-character-7 .modal-header h2,
+#modal-technique-5 .modal-header h2 {
+    color: #8f207c !important;
+}
+
+/* 8. ТОДЖИ - ТЕМНО-ГОЛУБОЙ С ГОЛУБЫМ */
+#modal-character-8 .modal-content {
+    background: linear-gradient(135deg, 
+        rgba(10, 40, 50, 0.95) 0%,
+        rgba(15, 60, 70, 0.95) 100%) !important;
+    border: 3px solid #118ab2 !important;
+}
+
+#modal-character-8 .modal-header {
+    background: rgba(17, 138, 178, 0.2) !important;
+    border-bottom: 3px solid #118ab2 !important;
+}
+
+#modal-character-8 .modal-header h2 {
+    color: #118ab2 !important;
+}

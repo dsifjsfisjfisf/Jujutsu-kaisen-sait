@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen: Энциклопедия</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#characters" class="nav-link"><i class="fas fa-users"></i> Персонажи</a></li>
+                <li><a href="#techniques" class="nav-link"><i class="fas fa-fire"></i> Техники</a></li>
+                <li><a href="#domains" class="nav-link"><i class="fas fa-expand-alt"></i> Территории</a></li>
+                <li><a href="#music" class="nav-link"><i class="fas fa-music"></i> Музыка</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Фиксированная кнопка профиля -->
+    <button id="authBtn" class="auth-btn-fixed">
+        <i class="fas fa-user"></i>
+    </button>
+    <!-- Кнопка переключения темы -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn" title="Переключить тему">
+            <i class="fas fa-palette"></i> Сменить тему
+        </button>
+    </div>
+
+    <!-- Главный экран -->
+        <!-- Главный экран -->
+<section class="hero" id="home">
+    <!-- Видео-фон для синей темы -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline class="video-bg blue-video">
+            <source src="videos\TVアニメ『呪術廻戦』第2期「懐玉・玉折」ノンクレジットOPムービー／OPテ.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        
+        <!-- Видео для красной темы -->
+        <video autoplay muted loop playsinline class="video-bg red-video">
+            <source src="videos\TVアニメ呪術廻戦第2期渋谷事変ノンクレジットOPムービーOPテーマKing GnuSPECIALZ毎週木曜夜11時56分MBSTBS系列全国28局にて放送中 [get.gt].mp4" type="video/mp4">
+            <!-- Добавьте своё красное видео -->
+            Ваш браузер не поддерживает видео.
+        </video>
+        
+        
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title"><span class="glitch-text">ЭНЦИКЛОПЕДИЯ</span><br>МАГИЧЕСКОЙ БИТВЫ</h1>
+            <p class="hero-subtitle">Полное собрание информации о персонажах, техниках, и музыке</p>
+            <a href="#characters" class="cta-button">Изучать энциклопедию <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </div>
+</section>
+
+    <!-- Раздел 1: Персонажи -->
+    <section class="section" id="characters">
+        <div class="container">
+            <h2 class="section-title">Персонажи</h2>
+            <p class="section-descr">Оценка силы дана по российской 5-балльной школе. Нажмите на карточку для детальной информации.</p>
+
+            <div class="cards-grid">
+                <!-- Карточка 1: Сатору Годзё -->
+                <div class="card" data-modal-target="modal-character-1">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                            <!-- РАЗМЕР: 400x500 пикселей (вертикальный портрет) -->
+                            <!-- ФОРМАТ: JPG или PNG -->
+                            <img src="images\37c043874ef27ffae54a2c5923524d3f.jpg" alt="Сатору Годзё" class="card-img">
+                            <div class="card-rating">5</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Сатору Годжо</h3>
+                            <p class="card-description">Сильнейший маг современности, обладающий лучшей защитной и атакующей техникой</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Рёмэн Сукуна -->
+                <div class="card" data-modal-target="modal-character-2">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                            <!-- РАЗМЕР: 400x500 пикселей (вертикальный портрет) -->
+                            <img src="images\suukuna.jpg" alt="Рёмэн Сукуна" class="card-img">
+                            <div class="card-rating">5+</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Рёмэн Сукуна</h3>
+                            <p class="card-description">Король Проклятий, сильнейший маг в истории с невероятной разрушительной силой</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Юта Оккоцу -->
+                <div class="card" data-modal-target="modal-character-3">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\юта олкоцууфцыаыва.jpg" alt="Юта Оккоцу" class="card-img">
+                            <div class="card-rating">4</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Юта Оккоцу</h3>
+                            <p class="card-description">Обладатель техники копирования и огромного запаса проклятой энергии</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Юдзи Итадори -->
+                <div class="card" data-modal-target="modal-character-4">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\jujutsu-kaisen-season-3-yuji-itadori.jpg" alt="Юдзи Итадори" class="card-img">
+                            <div class="card-rating">4</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Юдзи Итадори</h3>
+                            <p class="card-description">Носитель Сукуны с невероятной физической силой и способностью использовать черную молнию</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Кендзяку -->
+                <div class="card" data-modal-target="modal-character-5">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\mxresdefault.jpg" alt="Кендзяку" class="card-img">
+                            <div class="card-rating">4</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Кендзяку</h3>
+                            <p class="card-description">Древний маг-паразит, способный захватывать тела и использовать их техники</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Мегуми Фусигуро -->
+                <div class="card" data-modal-target="modal-character-6">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\ault (1).jpg" alt="Мегуми Фусигуро" class="card-img">
+                            <div class="card-rating">3</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Мегуми Фусигуро</h3>
+                            <p class="card-description">Наследник техники Десять теней клана Зенин с огромным потенциалом</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 7: Махито -->
+                <div class="card" data-modal-target="modal-character-7">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\Jujutsu-Kaisen-Mahito.jpg" alt="Махито" class="card-img">
+                            <div class="card-rating">4</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Махито</h3>
+                            <p class="card-description">Проклятый дух с техникой искажения души, способный изменять форму тел</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 8: Тоджи Фусигуро -->
+                <div class="card" data-modal-target="modal-character-8">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (карточка) -->
+                            <img src="images\1454820.jpg" alt="Тоджи Фусигуро" class="card-img">
+                            <div class="card-rating">4</div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Тоджи Фусигуро</h3>
+                            <p class="card-description">Убийца магов без проклятой энергии, обладающий невероятной физической силой</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел 2: Техники -->
+    <section class="section" id="techniques">
+        <div class="container">
+            <h2 class="section-title">Техники</h2>
+            <p class="section-descr">Сильнейшие магические техники вселенной. Имена владельцев кликабельны.</p>
+
+            <div class="cards-grid">
+                <!-- Карточка 1: Бесконечность -->
+                <div class="card" data-modal-target="modal-technique-1">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                            <!-- РАЗМЕР: 400x300 пикселей (горизонтальный формат) -->
+                            <!-- ФОРМАТ: JPG или PNG -->
+                            <img src="images\efault.jpg" alt="Техника Бесконечность" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Бесконечность</h3>
+                            <p class="card-description">Защитная техника Годжо, создающая бесконечное пространство между ним и противником</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: божественное пламя -->
+                <div class="card" data-modal-target="modal-technique-2">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\dde1947c8f73901aefafabaa41305355.jpg" alt="Техника Мировой разрез" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Божественное пламя</h3>
+                            <p class="card-description">Разрушительная огненная техника Сукуны, сжигающая все в радиусе 100 метров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Кулак дивергента -->
+                <div class="card" data-modal-target="modal-technique-3">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\maxefault.jpg" alt="Техника Кулак дивергента" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Кулак дивергента</h3>
+                            <p class="card-description">Техника Юдзи, наносящая два удара - физический и проклятой энергией с задержкой</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Черная молния -->
+                <div class="card" data-modal-target="modal-technique-4">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\c3bec338a7c310c3f49abf3c8b50767f.jpg" alt="Техника Черная молния" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Черная молния</h3>
+                            <p class="card-description">Редкая техника, усиливающая удар в 2.5 раза при идеальном тайминге энергии</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Инертная трансформация -->
+                <div class="card" data-modal-target="modal-technique-5">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\rYa2K1q24GNb3dgAvgZm6K6OTzj.jpg" alt="Техника Инертная трансформация" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Инертная трансформация</h3>
+                            <p class="card-description">Техника Махито, позволяющая напрямую искажать форму души и тела жертвы</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Десять теней -->
+                <div class="card" data-modal-target="modal-technique-6">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\ваовыаоывашыво.jpg" alt="Техника Десять теней" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Десять теней</h3>
+                            <p class="card-description">Наследственная техника клана Зенин для призыва десяти различных шикигами из теней</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 7: Копирование -->
+                <div class="card" data-modal-target="modal-technique-7">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\88877fdc28094221bdaba1ddc1cbd83a.jpg" alt="Техника Копирование" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Копирование</h3>
+                            <p class="card-description">Уникальная техника Юты, позволяющая копировать и использовать техники других магов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карочка 8: Синий, Красный, Фиолетовый -->
+                <div class="card" data-modal-target="modal-technique-8">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (карточка) -->
+                            <img src="images\fodfjs.jpg" alt="Синий, Красный, Фиолетовый" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Синий, Красный, Фиолетовый</h3>
+                            <p class="card-description">Производные техники Бесконечности: притяжение, отталкивание и их комбинация</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел 3: Расширения территорий -->
+    <section class="section" id="domains">
+        <div class="container">
+            <h2 class="section-title">Расширения территорий</h2>
+            <p class="section-descr">Высшая форма техники - личный мистический мир с гарантированным попаданием.</p>
+
+            <div class="cards-grid">
+                <!-- Карточка 1: Безграничная пустота -->
+                <div class="card" data-modal-target="modal-domain-1">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (карточка) -->
+                            <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                            <!-- РАЗМЕР: 400x300 пикселей (горизонтальный формат) -->
+                            <!-- ФОРМАТ: JPG или PNG -->
+                            <img src="images\split-images-of-gojo-satoru.avif" alt="Безграничная пустота" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Безграничная пустота</h3>
+                            <p class="card-description">Территория Годжо, перегружающая разум противника бесконечной информацией</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Гробница Зла -->
+                <div class="card" data-modal-target="modal-domain-2">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (карточка) -->
+                            <img src="images\sukuna-uses-his-domain-expansion-in-jujutsu-kaisen.avif" alt="Гробница Зла" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Гробница Зла</h3>
+                            <p class="card-description">Святилище Сукуны с гарантированным попаданием техник разрезания на 200 метров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Истинная взаимная любовь -->
+                <div class="card" data-modal-target="modal-domain-3">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (карточка) -->
+                            <img src="images\fault.jpg" alt="Истинная взаимная любовь" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Истинная взаимная любовь</h3>
+                            <p class="card-description">Территория Юты с безграничным запасом проклятой энергии и копированием техник</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Территория родного края -->
+                <div class="card" data-modal-target="modal-domain-4">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (карточка) -->
+                            <img src="images\34343676767efault.jpg" alt="Территория родного края" class="card-img">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Территория родного края</h3>
+                            <p class="card-description">Концептуальная территория Юдзи, лишающая противника техник и воли к бою</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел 4: Музыка -->
+    <section class="section" id="music">
+        <div class="container">
+            <h2 class="section-title">Музыка</h2>
+            <p class="section-descr">Эпические саундтреки и опенинги из аниме Jujutsu Kaisen. Нажмите на карточку для прослушивания.</p>
+
+            <div class="cards-grid">
+                <!-- Карточка 1: Опенинг 1 -->
+                <div class="card music-card" data-modal-target="modal-music-1">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка Kaikai Kitan -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images\hfurjkjf.jpg" alt="Kaikai Kitan" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Kaikai Kitan</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> Eve</span>
+                                <span><i class="fas fa-tv"></i> Опенинг 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Опенинг 2 -->
+                <div class="card music-card" data-modal-target="modal-music-2">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка Vivid Vice -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images\2c4a9fbc-d904-4543-acc6-655429ba4c70.jpeg" alt="Vivid Vice" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">If I Am With You</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> Who-ya Extended</span>
+                                <span><i class="fas fa-tv"></i> Опенинг 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Опенинг 3 -->
+                <div class="card music-card" data-modal-target="modal-music-3">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка Specialz -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images\475475ault (1).jpg" alt="Specialz" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Delirious</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> King Gnu</span>
+                                <span><i class="fas fa-tv"></i> Опенинг 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Опенинг 4 - AIZO -->
+                <div class="card music-card" data-modal-target="modal-music-4">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка AIZO -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images\ioioeeult (2).jpg" alt="AIZO" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">What was entrusted to me</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> Tatsuya Kitani</span>
+                                <span><i class="fas fa-tv"></i> Опенинг 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Эндинг 1 -->
+                <div class="card music-card" data-modal-target="modal-music-5">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка Lost in Paradise -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images\jjk217-1-2000x1125.jpg" alt="Lost in Paradise" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Joint Struggle</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> ALI feat. AKLO</span>
+                                <span><i class="fas fa-tv"></i> Эндинг 1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Эндинг 2 -->
+                <div class="card music-card" data-modal-target="modal-music-6">
+                    <div class="card-inner">
+                        <div class="card-img-container">
+                            <!-- ИЗОБРАЖЕНИЕ: Обложка Give it Back -->
+                            <!-- ЗАМЕНИ НА: путь к своей обложке -->
+                            <img src="images/image.png" alt="Give it Back" class="card-img">
+                            <div class="music-play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name">Thunderclap</h3>
+                            <div class="card-meta">
+                                <span><i class="fas fa-microphone"></i> Cö shu Nie</span>
+                                <span><i class="fas fa-tv"></i> Эндинг 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Jujutsu Kaisen Encyclopedia © 2023 — Личный проект по веб-разработке</p>
+            <p class="footer-note">Все права на образы принадлежат автору манги «Магическая битва» Гэгэ Акутами.</p>
+        </div>
+    </footer>
+
+    <!-- ============================ -->
+    <!-- МОДАЛЬНЫЕ ОКНА (POP-UPS) -->
+    <!-- ============================ -->
+
+    <!-- Модальное окно 1: Сатору Годзё -->
+    <div id="modal-character-1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Сатору Годжо</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное, для модального окна) -->
+                    <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                    <!-- РАЗМЕР: 800x400 пикселей (широкоформатное) -->
+                    <!-- ФОРМАТ: JPG или PNG -->
+                    <img src="images\m54default.jpg" alt="Сатору Годзё" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>5</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Сатору Годжо — высокий, привлекательный мужчина с торчащими во все стороны белыми волосами. В большинстве случаев его светло-голубые глаза закрыты очками или повязкой. Имеет чуть мускулистое телосложение.
+
+Он почти постоянно носит черную повязку на глаза, тёмную школьную форму: пиджак с длинным воротом, длинные черные брюки и черные туфли. Из-за повязки волосы стоят торчком.
+
+В непринуждённой обстановке и в нерабочее время предпочитает носить темные круглые солнцезащитные очки и темную рубашку с длинными рукавами, а также отпускать вечно торчащие из-за повязки волосы. атору чрезвычайно уверен в своих способностях и репутации могущественного мага, считая себя непобедимым. Его мнение о других часто ограничивается оценкой их силы, и он довольно безразличен ко всем, кого считает слабыми. Кроме того, находясь под сильным влиянием собственной силы, он очень высокомерен. Он убежден, что он самый сильный в мире, и технически так оно и есть, заявив во время своего боя с Тодзи Фусигуро, что "На небе и на земле лишь я достойный". Это можно еще раз проиллюстрировать, когда ему было поручено защищать Рико Аманай, одного из немногих "слабых" людей, которым он искренне сочувствовал.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Силы и способности</h3>
+                    <p>Даже среди магов особого ранга Сатору известен как сильнейший маг современности, обладающий как огромным количеством проклятой энергии, так и опасными и мощными техниками. Казалось, будто никто не может сравниться с ним по уровню мастерства в текущем времени, за исключением Короля проклятий Сукуны.
+
+В студенческие годы Сатору и Сугуру считались "самыми сильными", способными быстро справиться с опытными и могущественными магами. После осознания и совершенствования своих способностей, способности Сатору значительно выросли, и он смог заставить Тодзи Фусигуро защищаться и в конечном итоге он смог убить его своей сильнейшей техникой, когда как раньше он и Гето не могли сравниться с известным Убийцей Магов. Продолжая расти, он превзошел Сугуру по мощи настолько, что Сугуру признал, что Сатору действительно стал сильнейшим.</p>
+                </div>
+                <div class="info-section">
+                    <h3>История и ключевые события</h3>
+                    <p>Сатору Годжо родился 7 декабря 1989 года. Он был первым человеком примерно за четыреста лет, унаследовавшим как технику Безграничности, так и Шесть глаз. После его рождения баланс сил изменился, и за голову Сатору была назначена награда в размере более ста миллионов долларов, и он стал целью для наёмников за головами, однако в конечном счете они оказались бессильны перед ним.
+
+В какой-то момент Тодзи Зенин из клана Зенин отправился навестить Сатору. Наблюдая за ребенком, Сатору заметил присутствие Тодзи и обернулся, чтобы посмотреть на него, удивив Тодзи. Это был первый и последний раз, когда кто-либо знал о присутствии Тодзи, когда он стоял позади них, поскольку Тодзи не обладал проклятой энергией из-за своего Небесного ограничения.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-1">Техника: Бесконечность</a>
+                        <a href="#domains" data-modal-target="modal-domain-1">Территория: Безграничная пустота</a>
+                        <a href="#characters" data-modal-target="modal-character-2">Противник: Рёмэн Сукуна</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 2: Рёмэн Сукуна -->
+    <div id="modal-character-2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Рёмэн Сукуна</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                    <!-- РАЗМЕР: 800x400 пикселей -->
+                    <img src="images\l-intro-173043165.jpg" alt="Рёмэн Сукуна" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>5+</span></div>
+
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Его внешность более тысячи лет назад описывают так: вымышленный бог с четырьмя руками и двумя парами глаз.
+
+Сейчас же Сукуна похож на Итадори, в котором он в данный момент обитает, только с зачёсанными назад волосами, длинными тёмно-синими заострёнными ногтями и характерными чёрными татуировками на лбу, носу, щеках и на теле вообще. Линии под глазами — пара глаз над глазами, которые в аниме выглядят всегда чуть открытыми. Также на теле Сукуны по две линии на запястьях, предплечьях, круги с точкой в них — на плечах, два соска на груди и две линии на животе, когда он меняется местами с Юдзи.
+
+В теле Мэгуми Сукуна проявляется аналогично.
+
+Сукуна в своём внутреннем мире носит светлое кимоно с тёмной линией по краю, чёрный шарф вокруг шеи. Сукуна эгоистичный, бессердечный, аморальный и исключительный садист. Он - воплощение всеподавляющего эго, сосредоточенное лишь на себе бедствие. После того, как Юдзи Итадори проглотил палец, первое, чего желал Сукуна - начать убивать женщин и детей, а также сравнил их с ползающими вокруг личинками. Из-за своей огромной силы, он редко заботится о последствиях своих действий, даже если они затрагивают его сосуд в лице Юдзи Итадори. На самом деле, он часто насмехается и оскорбляет Юдзи, а также в некоторых ситуациях наслаждался его отчаянием.
+
+Так же, судя по всему, проявляет неприязнь и к мертвым, и к проклятьям, и к магам, а его цель на данный момент не обусловлена ничем, кроме как обычным наслаждением от упивания своей силой. Но, по-видимому, Сукуна проявляет интерес к Мэгуми как его естественному сосуду и его силе от наследственной техники клана, из-за чего тот не хочет допустить его смерти. После захвата тела Мэгуми он убивает реинкарнировавшуюся в теле Цумики Фушигуро и влюбленную в себя Ёрозу техниками только тела Мэгуми, чтобы максимально сломить последнего и погрузить его в бездонное отчаяние.</p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>Во времена Золотого века магии, в эпоху Хэйан, Рёмен Сукуна вызывал страх и благоговейный трепет у всех, кто был в его время, как самый могущественный маг того времени, побеждавший и убивавший тысячи магов, даже когда они оттачивали свои навыки против него. Одним из его подвигов было то, что он в одиночку уничтожил отряд "Наступающих Небесных Тел" во главе с Такако Уро и Пятерых Пустых Генералов - самых элитных бойцов клана Фудзивара, повергнув власти Японии в такой ужас, что они были готовы устроить празднества в его честь. Влияние, которое Сукуна оказывал на историю до самой своей смерти, принесло ему титул "Сильнейшего мага в истории", а также "Короля проклятий". Его сила по-прежнему пользуется таким большим уважением, что даже Сатору Годжо, сильнейший маг современности, с высоким уровнем самоуверенности и гордости за свои способности, признал его силу даже не смотря на то, что Рёмен неоднократно сдерживался.
+
+Сукуна не только соответствует своим титулам, но и обладает огромным количеством и отличной эффективностью проклятой энергии, а также столь же невероятным контролем над ней. К тому же, он отличился необыкновенным мастерством владения как своими, так и чужими проклятыми техниками. Для победы ему даже не всегда обязательно полагаться только на магию, ведь обладает потрясающей физической силой, способной уничтожить практически любого противника, даже не используя свою проклятую технику.
+
+Даже в самом слабом состоянии после своего воплощения в теле Юдзи, в течение большей части времени, которое он провел в нём, из-за отсутствия большинства пальцев, Сукуна оставался чрезвычайно сильным, способным без особых усилий изгонять могущественных проклятых духов, в том числе таких, как проклятый дух, который съел его палец, который он легко извлек из проклятого духа после того, как полностью одолел его. Намеренно ослабляя себя, вырвав сердце Юдзи, чтобы тот не смог вернуть контроль над телом, Сукуна был наголову сильнее Мэгуми Фусигуро, наследника ценной техники клана Зенин "Десять теней" и выдающегося гения, который поступил в школу как маг 2-го ранга с одним из самых высоких потенциалов в школе магии. Мэгуми признал, что он был в полнейшем меньшинстве, и был более чем готов призвать Махорагу, чтобы победить Сукуну. Сукуна убил бы Мэгуми, если бы его не заинтересовали уникальные техники Мэгуми, хотя прежде чем он смог сразиться с козырной картой Мэгуми, Юдзи сумел восстановить контроль над своим телом.</p>
+                </div>
+                <div class="info-section">
+                    <h3>История</h3>
+                    <p>Рёмэн Сукуна родился более тысячи лет назад в эпоху Хэйан (примерно 794–1185 гг. н.э.)</p>
+                </div>
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-2">Техника: Мировой разрез</a>
+                        <a href="#domains" data-modal-target="modal-domain-2">Территория: Гробница Зла</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 3: Юта Оккоцу -->
+    <div id="modal-character-3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Юта Оккоцу</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\maxresdefault.jpg" alt="Юта Оккоцу" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>4</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Юта — молодой парень с растрепанными черными волосами и светло-голубыми (в аниме темно-синими) глазами. Во время событий основной манги, его волосы будут уже улаженными, а вид ещё более изнуренный. Постоянно носит обручальное кольцо, что ему при жизни подарила Рика.
+
+В приквеле, при его первом поступлении в магический техникум, Оккоцу можно было легко прочитать: постоянно волнующийся, напряженный и неуверенный в себе парень, под глазами которого ещё и виднелись тёмные круги из-за недосыпания. Со временем эти мешки под глазами станут ещё более крупными, а его выражение лица станет безучастным и более уверенным. </p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>Оккоцу не обладает отличительными физическими параметрами, что он компенсирует своим огромнейшим запасом проклятой энергии. Более того, Юта сам признаёт, что является весьма слабым, что в его сражениях, в принципе, не играет никакой роли.
+
+Юте комфортней сражаться с противником на близком расстоянии. Обычно он наносит одиночные мощные сокрушительные удары, которые могут сокрушить его противника за один ход. Простого удара спереди в грудину Юдзи было достаточно, чтобы отбросить его назад, а один удар слева от Юты вырубил Чосо.</p>
+                </div>
+                <div class="info-section">
+                    <h3>история</h3>
+                    <p>В детстве Юта был тихим и скромным мальчиком, а потому друзей у него было тоже немного. В школе над ним издевались, а из-за вмешательства Рики в его жизнь, Оккоцу и вовсе замкнулся, что значительно сказалось на его уверенности в себе. Так же парня начала беспокоить безопасность окружающих его людей, ведь проклятье девушки, привязанное к нему, злобно настраивалось против любых его обидчиков. В конечном итоге, этот страх дошёл до такой степени, что Юта даже попытался закончить жизнь самоубийством, чего сделать Рика, конечно, не дала.
+
+Его отрешённость и нерешительность позволила Маки охарактеризовать его, как человека без чётких целей, с чем Юта полностью согласился. Но это так же и стало первой ступенькой к нахождению его самого себя и прибавления уверенности в себе. К тому же, девушка сразу поняла, что Оккоцу подвергался издёвкам, с чем парень всё так же легко согласился. Это показывает, что его можно было читать как открытую книгу.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-7">Техника: Копирование</a>
+                        <a href="#domains" data-modal-target="modal-domain-3">Территория: Истинная взаимная любовь</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 4: Юдзи Итадори -->
+    <div id="modal-character-4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Юдзи Итадори</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\jujutsu-kaisen-season-2-yuji.avif" alt="Юдзи Итадори" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>4</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Юдзи — мускулистый подросток с большими коричневыми глазами и светло-коричневыми (светло-розовыми в аниме), торчащими во все стороны волосами. Когда Юдзи стал сосудом-вместилищем Сукуна, под его глазами появились линии.
+
+В начале Юдзи носил светло-желтый худи с молнией и капюшоном, джинсы с загнутыми штанинами.
+
+После поступления в техническую школу Юдзи начал носить персональную версию школьной формы:[3] чёрный пиджак с длинным рукавом поверх красного худи с капюшоном и пуговицами на левой стороне плюс чёрные штаны.
+
+Во время инцидента в Сибуе у него появился заметный шрам между глазами и шрам поменьше на левой губной впадине рта. Оба шрама были нанесены Махито.
+
+Во время Смертельной Миграции Юдзи лишился под глазами отметин после того, как Сукуна перешел в тело Мегуми Фушигуро в качестве его нового сосуда. Юдзи — честный парень, заботящийся не только о тех, кто ему дорог, но и о тех, чьи взгляды на жизнь или моральные принципы он уважает, даже без близких связей. Всё потому, что он считает важной «ценность жизни», сознательно и подсознательно стремясь достичь или помочь достичь «правильной смерти», то есть окончания жизни, которая бы вобрала в себя всю «ценность» жизни прожитой. Из-за этих убеждений Юдзи легко теряет самообладание перед лицом необоснованной жестокости и бесчестности.
+
+Одна из определяющих черт Юдзи — желание пожертвовать собой ради других. Это необязательно значит пожертвовать жизнью, ведь Юдзи не так-то и хочет умирать, но своим благополучием — точно. Всё из-за последних слов дедушки, наказывающих Юдзи не жить как он, в одиночестве, и умереть в окружении других людей. Будучи без родителей и потеряв дедушку, Юдзи ставит себе целью выбрать то, как он окончит свою жизнь, а закончит он её непременно окружённым людьми.</p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>Юдзи знаменит своей сверхчеловеческой физической силой, из-за чего его однажды даже прозвали «Тигром Западной школы»[4] ещё до того, как он стал обучаться колдовству. Также Юдзи обладает очень редкой способностью быть сосудом для Сукуны без вреда телу и разуму, благодаря чему в его теле существуют не смешиваясь две души. </p>
+                </div>
+                <div class="info-section">
+                    <h3>история</h3>
+                    <p>Юдзи прибывает в больницу, в которой находится его дедушка, и встречается с ним. Эти двое начинают разговаривать, и дед Юдзи говорит ему использовать свою силу, чтобы помочь другим и быть в окружении друзей, когда он умрет. Юдзи пытается ответить своему деду, но замечает, что он умер, о чем сообщает персоналу. После того, как Юдзи заканчивает оформление необходимых документов, появляется Мэгуми и требует проклятый предмет. Юдзи говорит, что отдаст его ему, но хочет объяснений, на что Мэгуми объясняет, что такое проклятия. Закончив объяснение, Юдзи передает коробку, но Мэгуми обнаруживает, что коробка пуста. Мэгуми хочет знать, где находится предмет, на что Юдзи говорит, что он есть у его сенпая и что они планируют распечатать его сегодня вечером. Юдзи и Мэгуми спешат в школу, и Юдзи замечает ужасное давление со стороны школы, когда он приближается. Когда Мэгуми говорит Юдзи не вмешиваться, Юдзи вспоминает, что сказал ему дед, и направляется на помощь. Юдзи удается спасти своих друзей от духа, и Мэгуми использует этот шанс, чтобы изгнать дух. Затем Мэгуми спрашивает, почему Юдзи здесь, на что Юдзи объясняет свою причину.
+
+Внезапно Юдзи находит проклятый предмет, про который Мэгуми объясняет, что это один из пальцев Сукуны. Появляется еще один дух и Мэгуми выталкивает Юдзи с его пути. Когда дух бросает Мэгуми, Юдзи прыгает и спасает его. Юдзи берет на себя дух, но дух легко побеждает Юдзи. Мэгуми объясняет Юдзи, что для изгнания духа требуется проклятая энергия. Юдзи задается вопросом, почему дух преследует палец, на что Мэгуми говорит, что дух хочет съесть его, чтобы стать сильнее.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-3">Техника: Кулак дивергента</a>
+                        <a href="#techniques" data-modal-target="modal-technique-4">Техника: Черная молния</a>
+                        <a href="#domains" data-modal-target="modal-domain-4">Территория: Родной край</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 5: Кендзяку -->
+    <div id="modal-character-5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Кендзяку</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\кендзякуult (1).jpg" alt="Кендзяку" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>4</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Неизвестно, как выглядело первоначальное тело Кэндзяку. Его можно отличить только по швам и шрамам, которые окружают верхнюю часть головы его сосуда. аходясь в теле Сугуру Гето, Кэндзяку демонстрирует расслабленное, веселое и дерзкое отношение. Иногда бывают моменты, когда он ведет себя как тот, кем он овладел, например, когда он внезапно поймал себя на том, что ведет себя как Сугуру. Несмотря на то, что Кендзяку постоянно принимает разные обличья, он сохраняет свою личность.
+
+Хоть он и был готов работать с проклятыми духами для достижения своих целей, он негативно реагировал, когда эти духи вели себя так, словно они были ему равны. Он оказался сотрудником проклятий, так как это он сказал Дзёго и остальным, что именно им нужно сделать, и даже установил дружеские отношения с Махито. В свободное время Кэндзяку играл с ними в настольные игры. Это расслабленное и снисходительное отношение сохранялось во время боев, где он хвалил способности своих противников. Но иногда Кэндзяку делает паузу, утверждая, что говорит, как кто-то другой и это не совсем его собственные мысли. Из этого можно сделать вывод, что по крайней мере некоторые из его привычек исходят от личности самого Гето, которые влияют на Кэндзяку.</p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>вляясь тысячелетним шаманом, он обладает невероятными знаниями о проклятиях, проклятых техниках и мире шаманов в целом. Тенген заявил, что он был вторым по силе пользователем барьеров после себя. Во время владения телом и разумом Норитоси Камо, Кэндзяку стал известен как самый злой шаман в истории, и благодаря своим экспериментам он может создавать проклятые объекты особого уровня «Проклятое Чрево: Картины Смерти».</p>
+                </div>
+                <div class="info-section">
+                    <h3>история</h3>
+                    <p> один из главных антагонистов Jujutsu Kaisen. Является древнейшим шаманом, который преследует цель «эволюционирования» человечества с помощью проклятой энергии, тем самым открывая новый золотой век шаманов, параллельно эпохе Хэйан. Используя свою проклятую технику, которая позволяет ему пересаживать свой мозг в разные тела, чтобы обладать ими, он на протяжении веков населял разных людей, принимая разные личности.[1][2]
+
+Среди тех, в кого он вселялся, был Норитоси Камо более 150 лет назад,[2] после чего Кэндзяку стал известен как самый злой шаман в истории из-за чего оставил пятно на семье Камо. В настоящее время Кэндзяку владеет телом умершего Гето Сугуру, которого он выбрал для Манипуляции Проклятыми Духами.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 6: Мегуми Фусигуро -->
+    <div id="modal-character-6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Мегуми Фусигуро</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\maxresult.jpg" alt="Мегуми Фусигуро" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>3</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Мегуми — достаточно высокий, стройный парень с темными волосами и зелеными (в аниме темно-синими) глазами. У него уникально уложенные черные волосы с длинными шипами, которые торчат во все стороны вокруг его головы, напоминая морского ежа (согласно Киндзи Хакари).
+
+В средней школе Мегуми носил форму восточной средней школы Сайтама Урами, которая состояла из коричневой куртки поверх белой рубашки, черных брюк и белых кроссовок.
+
+Когда Мегуми поступил в Токийскую столичную техническую школу магии, он стал носить специальную униформу: чёрный пиджак с косым бортом и двумя пуговицами на левой стороне с длинными рукавами и высоким воротником, темные брюки до щиколотки и коричневые ботинки.
+
+При первой встрече с Мегуми, Годзё отметил сходство с его отцом Тодзи Фусигуро, а сам Мегуми имеет похожие черты лица и такие же зеленые глаза, как у его покойного отца.
+
+После арки «Разборки Синдзюку» и его разъединения с Сукуной, Мегуми приобретает три шрама на лице, соответствующие глазам воплощенной формы Сукуны: один шрам под левым глазом Мегуми и два шрама там, где были глаза «второго лица» Сукуны. Будучи внешне стоическим и расчетливым, обычно у него нейтральное выражение лица, которое он редко меняет, создавая впечатление, что он воспринимает каждую ситуацию серьезно. Это сильно контрастирует с общительными и глупыми личностями Юджи, Нобары и Сатору, которые часто раздражают Мегуми. Его легко раздражать, и Юджи заметил, что Мегуми всегда выглядит немного сердитым.[4] Мегуми желает помочь защитить людей, которых он считает хорошими или добрыми. Он считает, что мир несправедлив и что маг — это инструмент для того, чтобы добрым людям давали больше шансов жить. Утверждая, что это его эгоистичное и иррациональное желание, он не видит себя героем.</p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>Мегуми поступил в школу как маг второго ранга. Потенциал к развитию в нём разглядели даже Норитоси Камо, который выразил мнение о том, что возраст Мегуми не имеет значения из-за его унаследованной техники, и что он даже более надежен, чем Наобито Зенин. Так же, Май Зенин и Сукуна. Последний примечает во время боя, что Мегуми больше сражается в ближнем бою, что выделяет его среди остальных пользователей шикигами, но скрывает его лучшие способности. Больше всего Мегуми использует физические атаки в комбинации с шикигами-помощниками. И во время сражений с помощью своих аналитических навыков и тактического мышления перехитривает своих противников, это хорошо наблюдается в Смертельной Миграции.</p>
+                </div>
+                <div class="info-section">
+                    <h3>история</h3>
+                    <p>Когда Мегуми учился в начальной школе, его отец женился на маме Цумики. Когда их родители умерли, Годзё вмешался и попросил колледж поддержать Мегуми и его сестру вместо Мегуми, направляющихся в клан Зенин. Также известно, что Мегуми однажды учился в средней школе Сайтама Урами Востока, часто ввязываясь во множество драк. Обычно его ругала старшая сводная сестра Цумики за его необдуманные поступки.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-6">Техника: Десять теней</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 7: Махито -->
+    <div id="modal-character-7" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Махито</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\w1500_52094502.jpg" alt="Махито" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>4</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Махито — молодой проклятый дух, что только начал изучать все тайны своих способностей и сил. По этой причине он не преследует какие-либо высокие цели или мотивы, просто развлекаясь и наслаждаясь битвами, которые планирует Кендзяку. Махито не воспринимает смерть всерьёз, а жизнь и эмоции людей для него не играют никакой роли. Шаманами описывается как человекоподобный проклятый дух с лицом, покрытым швами. У Махито длинные серые волосы и такого же цвета глаза, а по лицу также идут множество разных швов. Части своего тела он при желании может видоизменять, но в основном ходит в человеческом обличие. Носит же проклятый дух чёрные кофту и штаны, что могут повреждаться от использования его способности. По этой причине он предпочитает ходить босиком. </p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>В распоряжении Махито большое количество проклятой энергии, поэтому он без проблем может использовать свою технику продолжительное время без остановки. Сам Нанами сказал, что сражаться с Махито, пока его проклятая энергия не иссякнет, нереально.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Связанные элементы</h3>
+                    <div class="related-links">
+                        <a href="#techniques" data-modal-target="modal-technique-5">Техника: Инертная трансформация</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 8: Тоджи Фусигуро -->
+    <div id="modal-character-8" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Тоджи Фусигуро</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (детальное) -->
+                    <img src="images\maxresdefault (2).jpg" alt="Тоджи Фусигуро" class="modal-hero-img">
+                    <div class="modal-rating">Оценка силы: <span>4</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Внешность и характер</h3>
+                    <p>Тодзи — высокий, мускулистый мужчина с прямыми черными волосами средней длины, достигающими ушей. У него зеленые глаза, как и у его сына, тонкие черные брови и шрам в правом уголке губ.
+
+В повседневной жизни Тодзи предпочитает простую одежду: черную рубашку с длинными рукавами, подходящие брюки и сандалии. Для боя он облачается в облегающую черную футболку, свободные светлые тренировочные штаны с черным поясом на талии и черные тапочки для ушу. Когда Тодзи еще был членом клана Зенин, он носил более длинные волосы и одевался в темное хаори поверх черной юкаты. Тодзи — хладнокровный и уверенный в себе мужчина, зарабатывающий на жизнь своими навыками и не обращающий внимания на мелочи. Он, похоже, наслаждается содержательными беседами с другими, особенно если разговор так или иначе касается его самого[2]. Тодзи способен обмениваться остроумными репликами даже с такими саркастичными личностями, как Сатору Годжо. При их первой встрече Сатору поинтересовался, не встречались ли они раньше, на что Тодзи ответил, что он не из тех, кто запоминает случайных людей[3]. В бою лицо Тодзи искажается безумным выражением, словно он теряется в упоении схваткой. Однако это лишь видимость: на самом деле он всегда сохраняет хладнокровие и расчетливость, постоянно продумывая свой следующий ход.</p>
+                </div>
+                <div class="info-section">
+                    <h3>способности</h3>
+                    <p>Хотя Тодзи технически не является пользователем проклятой энергии и не имеет врожденного таланта к магии, но он был одним из самых сильных бойцов в мире магов. Обладая врожденной физической силой, Тодзи боролся с самыми опасными и высокоранговыми практикантами магии этой эпохи. Так как у Тодзи нет проклятой энергии, Сатору Годжо, считавшийся вундеркиндом и одним из сильнейших магов в мире, не смог среагировать и уклонится от его атак, направленных в смертельные точки. Это показывает его умение использовать свои недостатки (отсутствие проклятой энергии) и превращать в своё главное преимущество, как и в случае против Сатору, чьи глаза могли уловить лишь проклятую энергию, так и в случае с другими магами, в особенности при убийстве сосуда Звездной плазмы для Великой Тенген. Битвой Тодзи с Годжо помог последнему подняться на ещё более высокий уровень, так как шестиглазый маг смог научиться сортировать вещи не только по проклятой энергии, но и по их массе и размеру. Это показывает, насколько Тодзи был силён, раз сильнейшему магу мира пришлось приспосабливаться, чтобы победить.</p>
+                </div>
+                <div class="info-section">
+                    <h3>история</h3>
+                    <p>Тодзи Зенин родился 31 декабря[1] в клане Зенин. Он был сыном двадцать пятого главы клана Зенин, старшего брата Наобито Зенина, и младшим братом Дзиничи Зенина[2]. Из-за Небесного Ограничения, полностью лишившего его способности использовать проклятую энергию, Тодзи был вынужден полагаться на проклятые инструменты в бою. Многие родственники считали его неполноценным, и это презрение было настолько сильным, что в детстве его подвергали жестокому обращению и бросали в яму наказаний, полную проклятых духов. Шрам в правом уголке губ остался у него как напоминание об одном из таких наказаний[1]. Однако, когда Тодзи вырос, некоторые члены семьи начали испытывать к нему сильный страх из-за его физической силы, в то время как другие стали его уважать[3]. Находясь в клане Зенин, Тодзи однажды решил встретиться с юным Сатору Годжо из праздного любопытства и был удивлен, когда тот смог его заметить. Это был первый и последний раз, когда кто-то заметил Тодзи, стоящего у них за спиной.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 9: Техника "Бесконечность" -->
+    <div id="modal-technique-1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Бесконечность</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное, для модального окна) -->
+                    <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                    <!-- РАЗМЕР: 800x400 пикселей (широкоформатное) -->
+                    <!-- ФОРМАТ: JPG или PNG -->
+                    <img src="https://via.placeholder.com/800x400/0d3b66/ffffff?text=Бесконечность+детально" alt="Бесконечность" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Защитная</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Нейтральная Безграничность или же Бесконечность - Будучи нейтральной формой Безграничность, Бесконечность широко известна как способность останавливать атаку, хотя это распространенное заблуждение, поскольку истинная сила Бесконечности заключается в том, чтобы замедлять действия возле Годжо. Когда что-то пытается ударить Сатору, человек или объект, о котором идет речь, вместо этого попадает в бесконечность между ним и собой. По словам Сатору, это сближение бесконечного ряда и происходит прямо из парадокса Ахиллеса и черепахи. Подобно тому, как Ахиллес никогда не поймает черепаху из-за потенциального, бесконечного количества конечного пространства, разделяющего их, или как реальный номер один никогда не коснется реального номера два из-за бесконечного количества дробей, разделяющих их, противник никогда не коснется Сатору из-за бесконечности между ними. Сатору может решать, что его касается, а что нет, и может делать это, основываясь на массе, скорости и степени опасности.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-1">Сатору Годзё</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Модальное окно 10: Техника "Божественное пламя" -->
+<div id="modal-technique-2" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Божественное пламя</h2>
+            <span class="modal-close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="modal-hero">
+                <!-- ВИДЕО ТЕХНИКИ -->
+                <video autoplay muted loop playsinline class="modal-hero-img">
+                    <source src="videos\Untitleed.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+                <div class="modal-meta">Тип: <span>Атакующая</span></div>
+            </div>
+            <div class="info-section">
+                <h3>Описание техники</h3>
+                <p>Сукуна создает пламя внутри которого сосредоточено много проклятой энергии, при выстреле с такого лука сукуна сжигает все в радиусе ближайших 100 метров</p>
+            </div>
+            <div class="info-section">
+                <h3>Обладатели</h3>
+                <p>Основной обладатель: <span class="character-link" data-target="modal-character-2">Рёмэн Сукуна</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Модальное окно 11: Техника "Кулак дивергента" -->
+    <div id="modal-technique-3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Кулак дивергента</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/2a9d8f/ffffff?text=Дивергент+детально" alt="Кулак дивергента" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Атакующая</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Во время боя с проклятым коконом, Юдзи впервые задумался в вкладывании проклятой энергии в удар кулаком. Позже, во время тренировок Годжо Сатору, Юдзи вспомнил свою первую попытку использовать проклятую энергию, а затем довёл эту технику до рабочего состояния, благодаря тому, что научился управлять потоком проклятой энергии во время тренировок.
+
+Но у техники был существенный недостаток - проклятая энергия ударяет цель не вместе с физическим ударом, а чуть позже. В некоторых случаях этот недостаток представлялся обманным манёвром, заставляющим противника, получившего физический урон, потерять бдительность и получить порцию урона проклятой энергией. Таким образом, цель кулака Юдзи получала два удара в одном.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-4">Юдзи Итадори</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 12: Техника "Черная молния" -->
+    <div id="modal-technique-4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Черная молния</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/264653/ffffff?text=Черная+молния+детально" alt="Черная молния" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Атакующая</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Чёрная молния - это искажение в пространстве, что возникает из-за применения проклятой энергии в пределах 0.000001 секунды физического удара. Если пользователю удаётся применить проклятую энергию именно в этот момент, их собственная потраченная ранее проклятая энергия вспыхивает чёрным, а сила атаки возрастает во 2.5 степень.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-4">Юдзи Итадори</span></p>
+                    <p>Также могут использовать опытные маги.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 13: Техника "Инертная трансформация" -->
+    <div id="modal-technique-5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Инертная трансформация</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/e9c46a/ffffff?text=Трансформация+детально" alt="Инертная трансформация" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Искажение души</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>техника напрямую взаимодействует с душой человека и искажает тело под любую форму</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-7">Махито</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 14: Техника "Десять теней" -->
+    <div id="modal-technique-6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Десять теней</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/2a9d8f/ffffff?text=10+теней+детально" alt="Десять теней" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Призыв шикигами</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Таких теней-шикигами может быть не больше десяти. Мегуми и Сукуна использовали данную технику не только для материализации достойных помощников-шикигами, но и скрываясь в тени и храня там снаряжение. Подразумевается, что маг должен сформировать из своей собственной проклятой энергии шикигами, имея в голове образ внешнего вида шикигами, чтобы из его тени вышло нужное существо. Когда шикигами из Десяти Теней полностью уничтожены - их больше нельзя призвать. Однако вся сила, оставленная уничтоженным шикигами, передается другим, делая их сильнее.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-6">Мегуми Фусигуро</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 15: Техника "Копирование" -->
+    <div id="modal-technique-7" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Копирование</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/9d4edd/ffffff?text=Копирование+детально" alt="Копирование" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Универсальная</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Уникальная врожденная техника Юты Оккоцу, позволяющая копировать и использовать проклятые техники других магов. Для копирования техники Юта должен прикоснуться к цели своим проклятым мечом Рики. После копирования техника сохраняется и может быть использована в любой момент. Благодаря огромному запасу проклятой энергии, Юта может использовать скопированные техники без ограничений, делая его одним из самых универсальных бойцов.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-3">Юта Оккоцу</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 16: Техника "Синий, Красный, Фиолетовый" -->
+    <div id="modal-technique-8" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Синий, Красный, Фиолетовый</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕХНИКИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/4a0072/ffffff?text=Цвета+детально" alt="Синий, Красный, Фиолетовый" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Производные</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание техники</h3>
+                    <p>Производные техники Безграничности Сатору Годжо. Синий создает точку притяжения с отрицательной энергией, притягивая все к центру. Красный - обратная техника, создающая отталкивание с положительной энергией. Фиолетовый - комбинация Синего и Красного, создающая разрушительную волну, которая стирает материю на атомном уровне. Это самая мощная атакующая техника Годжо, способная уничтожить практически любого противника.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-1">Сатору Годзё</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 17: Территория "Безграничная пустота" -->
+    <div id="modal-domain-1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Безграничная пустота</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (детальное, для модального окна) -->
+                    <!-- ПУТЬ К ФАЙЛУ: замените src на путь к вашему изображению -->
+                    <!-- РАЗМЕР: 800x400 пикселей (широкоформатное) -->
+                    <!-- ФОРМАТ: JPG или PNG -->
+                    <img src="https://via.placeholder.com/800x400/457b9d/ffffff?text=Пустота+детально" alt="Безграничная пустота" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Парализующая</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание территории</h3>
+                    <p>Расширение территории Сатору Годжо, основанное на его технике Безграничность. Внутри территории противник оказывается в бесконечном белом пространстве, где его разум перегружается бесконечным потоком информации. Жертва видит и чувствует всё, но не может ничего сделать, оставаясь парализованной. Даже несколько секунд в этой территории могут привести к необратимым повреждениям мозга.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-1">Сатору Годзё</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 18: Территория "Гробница Зла" -->
+    <div id="modal-domain-2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Гробница Зла</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/6a040f/ffffff?text=Гробница+детально" alt="Гробница Зла" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Святилище</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание территории</h3>
+                    <p>Расширение территории Рёмэна Сукуны - Гробница Зла. Создает святилище с радиусом 200 метров, внутри которого все атаки Сукуны гарантированно попадают в цель. Территория использует две техники разрезания: "Разрез" для объектов с проклятой энергией и "Расчленение" для обычных объектов. Уникальность территории в том, что она не создает барьер, позволяя Сукуне свободно перемещаться и атаковать.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-2">Рёмэн Сукуна</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 19: Территория "Истинная взаимная любовь" -->
+    <div id="modal-domain-3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Истинная взаимная любовь</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/7209b7/ffffff?text=Любовь+детально" alt="Истинная взаимная любовь" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Техника Рики</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание территории</h3>
+                    <p>Расширение территории Юты Оккоцу, основанное на связи с проклятым духом Рики. Внутри территории Юта получает доступ к безграничному запасу проклятой энергии и может свободно копировать и использовать любые техники. Территория создает пространство, наполненное любовью и преданностью, усиливая все способности Юты и позволяя ему сражаться на равных с сильнейшими противниками.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-3">Юта Оккоцу</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 20: Территория "Территория родного края" -->
+    <div id="modal-domain-4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Территория родного края</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-hero">
+                    <!-- ИЗОБРАЖЕНИЕ ТЕРРИТОРИИ (детальное) -->
+                    <img src="https://via.placeholder.com/800x400/f72585/ffffff?text=Родной+край+детально" alt="Территория родного края" class="modal-hero-img">
+                    <div class="modal-meta">Тип: <span>Концептуальная</span></div>
+                </div>
+                <div class="info-section">
+                    <h3>Описание территории</h3>
+                    <p>Расширение территории Юдзи Итадори - уникальная концептуальная территория без гарантированного попадания. Вместо нанесения прямого урона, территория создает пространство воспоминаний и эмоций, где Юдзи может показать противнику свои переживания и мысли. Это лишает врага воли к бою и техник, заставляя его переосмыслить свои действия. Территория отражает добрую натуру Юдзи и его желание понять противника.</p>
+                </div>
+                <div class="info-section">
+                    <h3>Обладатели</h3>
+                    <p>Основной обладатель: <span class="character-link" data-target="modal-character-4">Юдзи Итадори</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно 9: Музыка 1 - Kaikai Kitan -->
+    <div id="modal-music-1" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>Kaikai Kitan</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО: Kaikai Kitan -->
+                    <!-- ЗАМЕНИ НА: <video> или <iframe> с твоим видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\Jujutsu Kaisen - Opening 1 _ 4K _ 60FPS _ Creditless _ (online-video-cutter.com).mp4" type="video/mp4">
+                        <source src="videos/kaikai-kitan.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <!-- АУДИО: Kaikai Kitan -->
+                    <!-- ЗАМЕНИ НА: путь к своему аудио файлу -->
+                    <audio class="hidden-audio">
+                        <source src="sounds\Eve_-_Kaikai_Kitan_Jujutsu_Kaisen_OPAnimeNewMusic_71202572.mp3" type="audio/mpeg">
+                        <source src="music/kaikai-kitan.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <!-- ОБЛОЖКА: замени на свою -->
+                                <img src="images/image.png" alt="Kaikai Kitan Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">Kaikai Kitan</h3>
+                                <p class="track-artist">Eve</p>
+                                <p class="track-album">Jujutsu Kaisen Opening 1</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Первый опенинг аниме "Магическая битва" от Eve. Энергичная рок-композиция с мощными гитарными риффами, драйвовыми барабанами и эмоциональным вокалом. Трек идеально передает атмосферу серии и знакомит зрителей с миром магов и проклятий. Звучит во время знакомства с главными героями и первых битв с проклятыми духами.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 10: Музыка 2 -->
+    <div id="modal-music-2" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>If I Am With You</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО К МУЗЫКЕ: замените src на путь к видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\xYEyFY62XzCplPqu5sZP+4Jt78n_A7jM.mp4" type="video/mp4">
+                        <source src="videos/vivid-vice-mv.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="sounds\Yoshimasa_Terui_-_If_I_Am_With_You_77128953.mp3" type="audio/mpeg">
+                        <source src="music/vivid-vice.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/image.png" alt="Vivid Vice Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">If I Am With You</h3>
+                                <p class="track-artist">Yuuma Uchida</p>
+                                <p class="track-album">Jujutsu Kaisen OST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">2:26</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Эмоциональная композиция с мелодичными гитарными партиями и атмосферными синтезаторами. Трек использует акустические и электрические гитары, мягкие ударные и струнные аранжировки. Создает интимную атмосферу размышлений о дружбе и связях между персонажами, идеально подходит для лирических моментов серии.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 11: Музыка 3 -->
+    <div id="modal-music-3" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>Delirious</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО К МУЗЫКЕ: замените src на путь к видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\IvoDhY8wRYj3Q4zutNgA+T3in1O6FLf8 (1).mp4" type="video/mp4">
+                        <source src="videos/specialz-mv.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="sounds\Neizvestnyjj_-_Delirious_Jujutsu_Kaisen_2nd_Season_OST21AnimeNewMusic_77315474.mp3" type="audio/mpeg">
+                        <source src="music/specialz.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/image.png" alt="Specialz Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">Delirious</h3>
+                                <p class="track-artist">Hiroaki Tsutsumi</p>
+                                <p class="track-album">Jujutsu Kaisen OST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Интенсивная композиция с агрессивными электронными битами и искаженными синтезаторами. Трек построен на тяжелых басовых линиях, глитч-эффектах и индустриальных звуках. Отражает хаотичное состояние разума и безумие битв, создавая напряженную атмосферу психологического давления и внутренних конфликтов персонажей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 12: Музыка 4 -->
+    <div id="modal-music-4" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>What was entrusted to me</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО К МУЗЫКЕ: замените src на путь к видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\R1Vx1EQeTcsv2N6CspK9+pSOH-M3b_5w.mp4" type="video/mp4">
+                        <source src="videos/lost-in-paradise-mv.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="sounds\What was entrusted to me - Jujutsu Kaisen Season 2 Original Soundtrack - Compendium.mp3" type="audio/mpeg">
+                        <source src="music/lost-in-paradise.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/image.png" alt="Lost in Paradise Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">What was entrusted to me</h3>
+                                <p class="track-artist">Alisa Takigawa</p>
+                                <p class="track-album">Jujutsu Kaisen OST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Торжественная и эпическая композиция с оркестровыми элементами и мощными хорами. Использует симфонические струнные, медные духовые инструменты и величественные барабаны. Трек передает чувство ответственности, наследия и важности миссии, которая была доверена героям. Звучит во время ключевых моментов принятия судьбоносных решений.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 13: Музыка 5 -->
+    <div id="modal-music-5" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>Joint Struggle</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО К МУЗЫКЕ: замените src на путь к видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\dWAGl7A1lt7qeLDV7iis+CbRVrLZKn0o.mp4" type="video/mp4">
+                        <source src="videos/domain-expansion-mv.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="sounds\Yoshimasa Terui - Joint Struggle.mp3" type="audio/mpeg">
+                        <source src="music/domain-expansion.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/image.png" alt="Domain Expansion Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">Joint Struggle</h3>
+                                <p class="track-artist">Hiroaki Tsutsumi</p>
+                                <p class="track-album">Jujutsu Kaisen OST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Динамичная боевая композиция с мощными ударными и энергичными гитарными риффами. Трек сочетает рок-элементы с оркестровыми вставками, используя электрогитары, живые барабаны и струнные секции. Передает дух товарищества и совместной борьбы против общего врага, звучит во время командных битв и моментов единения героев.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно 14: Музыка 6 -->
+    <div id="modal-music-6" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>Thunderclap</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <!-- ВИДЕО К МУЗЫКЕ: замените src на путь к видео -->
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos\WZpPmFR1ZZcZWyNXoesR+NvcYfsSTzG4.mp4" type="video/mp4">
+                        <source src="videos/gojo-theme-mv.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="sounds\Jujutsu Kaisen Season 2 — Thunderclap (www.lightaudio.ru).mp3" type="audio/mpeg">
+                        <source src="music/gojo-theme.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/image.png" alt="Gojo Theme Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                                <!-- Аудио визуализатор -->
+                                <div class="audio-visualizer">
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                    <div class="visualizer-bar"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">Thunderclap</h3>
+                                <p class="track-artist">Hiroaki Tsutsumi</p>
+                                <p class="track-album">Jujutsu Kaisen OST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>Мощная и взрывная композиция с тяжелыми электронными битами и металлическими гитарными риффами. Использует дисторшн-гитары, агрессивные синтезаторы и громовые звуковые эффекты. Трек имитирует звук грома и молнии, создавая атмосферу разрушительной силы и неотвратимости судьбы во время кульминационных битв.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    ШАБЛОН ДЛЯ СОЗДАНИЯ МОДАЛЬНЫХ ОКОН:
+    
+    Скопируй этот код для каждой карточки (modal-music-2 до modal-music-8):
+    
+    <div id="modal-music-X" class="modal">
+        <div class="modal-content music-modal">
+            <div class="modal-header">
+                <h2>НАЗВАНИЕ ТРЕКА</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="music-video-section">
+                    <video autoplay muted loop playsinline class="music-video">
+                        <source src="videos/твое-видео.mp4" type="video/mp4">
+                        <source src="videos/твое-видео.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+                
+                <div class="custom-music-player">
+                    <audio class="hidden-audio">
+                        <source src="music/твой-трек.mp3" type="audio/mpeg">
+                        <source src="music/твой-трек.ogg" type="audio/ogg">
+                    </audio>
+                    
+                    <div class="player-container">
+                        <div class="player-info">
+                            <div class="track-cover">
+                                <img src="images/твоя-обложка.jpg" alt="Cover" class="cover-img">
+                                <div class="cover-overlay">
+                                    <div class="vinyl-effect"></div>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3 class="track-title">НАЗВАНИЕ ТРЕКА</h3>
+                                <p class="track-artist">ИСПОЛНИТЕЛЬ</p>
+                                <p class="track-album">АЛЬБОМ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button class="control-btn prev-btn">
+                                <i class="fas fa-step-backward"></i>
+                            </button>
+                            <button class="control-btn play-pause-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="control-btn next-btn">
+                                <i class="fas fa-step-forward"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="progress-section">
+                            <span class="time current-time">0:00</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                                <div class="progress-handle"></div>
+                            </div>
+                            <span class="time total-time">0:00</span>
+                        </div>
+                        
+                        <div class="volume-section">
+                            <i class="fas fa-volume-up volume-icon"></i>
+                            <div class="volume-bar">
+                                <div class="volume-fill"></div>
+                                <div class="volume-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="track-description">
+                    <p>ОПИСАНИЕ ТРЕКА</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <!-- МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-modal-content">
+            <span class="modal-close" onclick="closeAuthModal()">&times;</span>
+            
+            <!-- Форма входа -->
+            <div id="login-form" class="auth-form">
+                <h2>Вход</h2>
+                <input type="text" id="login-login" placeholder="Логин" class="form-input">
+                <input type="password" id="login-password" placeholder="Пароль" class="form-input">
+                <button onclick="login()" class="form-btn">Войти</button>
+                <p class="form-switch">Нет аккаунта? <a onclick="showRegisterForm()">Зарегистрироваться</a></p>
+            </div>
+            
+            <!-- Форма регистрации -->
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h2>Регистрация</h2>
+                <input type="text" id="reg-nickname" placeholder="Никнейм" class="form-input">
+                <input type="text" id="reg-login" placeholder="Логин" class="form-input">
+                <input type="password" id="reg-password" placeholder="Пароль (минимум 6 символов)" class="form-input">
+                <input type="password" id="reg-confirm-password" placeholder="Подтвердите пароль" class="form-input">
+                <button onclick="register()" class="form-btn">Зарегистрироваться</button>
+                <p class="form-switch">Уже есть аккаунт? <a onclick="showLoginForm()">Войти</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- СТРАНИЦА ПРОФИЛЯ -->
+    <div id="profile-page" class="profile-page" style="display: none;">
+        <button class="btn-back-to-main" onclick="closeProfilePage()">
+            <i class="fas fa-arrow-left"></i> Назад
+        </button>
+        
+        <input type="file" id="banner-upload" accept="image/*,video/*" style="display: none;" onchange="uploadBanner(this)">
+        <input type="file" id="avatar-upload" accept="image/*" style="display: none;" onchange="uploadAvatar(this)">
+        
+        <div class="profile-page-content">
+            <!-- Баннер профиля -->
+            <div class="profile-banner" id="profile-banner">
+                <img id="profile-banner-img" src="" alt="Banner" style="display: none;">
+                <button onclick="changeBanner()" class="btn-change-banner" id="btn-change-banner" style="display: none;">
+                    <i class="fas fa-image"></i> Изменить баннер
+                </button>
+            </div>
+            
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img id="profile-avatar-img" src="" alt="Avatar">
+                    <button onclick="changeAvatar()" class="btn-change-avatar" id="btn-change-avatar" style="display: none;">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profile-nickname">Никнейм</h2>
+                    <p id="profile-login">@логин</p>
+                    <button onclick="changeNickname()" class="btn-edit-nickname" id="btn-edit-nickname" style="display: none;">Изменить никнейм</button>
+                </div>
+                <div class="profile-actions" id="profile-actions-own" style="display: none;">
+                    <button onclick="openCardCreator()" class="btn-create-card">
+                        <i class="fas fa-plus"></i> Создать карточку
+                    </button>
+                    <button onclick="logout()" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> Выйти
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Поиск пользователей -->
+            <div class="profile-search" id="profile-search">
+                <h3>Поиск пользователей</h3>
+                <div class="search-box">
+                    <input type="text" id="user-search-input" placeholder="Введите никнейм пользователя..." class="form-input">
+                    <button onclick="searchUsers(document.getElementById('user-search-input').value)" class="btn-search-icon">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+            
+            <!-- Карточки пользователя -->
+            <div class="profile-cards">
+                <h3>Карточки</h3>
+                <div id="user-cards-container" class="user-cards-grid">
+                    <!-- Карточки пользователя -->
+                </div>
+            </div>
+            
+            <!-- Комментарии -->
+            <div class="profile-comments">
+                <h3>Комментарии</h3>
+                <div class="comment-form" id="comment-form" style="display: none;">
+                    <textarea id="comment-text" placeholder="Написать комментарий..." class="form-textarea"></textarea>
+                    <div class="comment-attachments">
+                        <input type="file" id="comment-attachment" accept="image/*,video/*" style="display: none;" onchange="previewCommentAttachment(this)">
+                        <button onclick="document.getElementById('comment-attachment').click()" class="btn-attach">
+                            <i class="fas fa-paperclip"></i> Прикрепить
+                        </button>
+                        <div id="attachment-preview" class="attachment-preview"></div>
+                    </div>
+                    <button onclick="postComment()" class="btn-post-comment">Отправить</button>
+                </div>
+                <div class="comments-list" id="comments-list">
+                    <!-- Комментарии -->
+                </div>
+                <div class="comments-pagination" id="comments-pagination">
+                    <!-- Пагинация -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО СОЗДАНИЯ КАРТОЧКИ -->
+    <div id="card-creator-modal" class="card-creator-modal">
+        <div class="card-creator-content">
+            <span class="modal-close" onclick="closeCardCreatorModal()">&times;</span>
+            
+            <!-- Выбор типа карточки -->
+            <div id="card-type-selector" class="type-selector">
+                <h2>Выберите тип карточки</h2>
+                <div class="type-buttons">
+                    <button onclick="selectCardType('character')" class="type-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Персонаж</span>
+                    </button>
+                    <button onclick="selectCardType('technique')" class="type-btn">
+                        <i class="fas fa-fire"></i>
+                        <span>Техника</span>
+                    </button>
+                    <button onclick="selectCardType('domain')" class="type-btn">
+                        <i class="fas fa-expand-alt"></i>
+                        <span>Территория</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Форма создания карточки -->
+            <div id="card-creator-form" class="creator-form" style="display: none;">
+                <h2 id="card-creator-title">Создание карточки</h2>
+                <input type="hidden" id="selected-card-type">
+                
+                <div class="form-group">
+                    <label>Название</label>
+                    <input type="text" id="card-name" placeholder="Введите название" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label>Описание для карточки</label>
+                    <textarea id="card-description" placeholder="Краткое описание" class="form-textarea"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Цвет темы модального окна</label>
+                    <input type="color" id="card-color" value="#00b4ff" class="form-color">
+                </div>
+                
+                <div class="form-group">
+                    <label>Изображение для карточки</label>
+                    <input type="file" accept="image/*" onchange="previewImage(this, 'card-image-preview')" class="form-file">
+                    <img id="card-image-preview" src="https://via.placeholder.com/300x400/333/fff?text=Карточка" class="image-preview">
+                </div>
+                
+                <div class="form-group">
+                    <label>Изображение для модального окна</label>
+                    <input type="file" accept="image/*" onchange="previewImage(this, 'modal-image-preview')" class="form-file">
+                    <img id="modal-image-preview" src="https://via.placeholder.com/800x400/333/fff?text=Модальное+окно" class="image-preview">
+                </div>
+                
+                <div class="form-group">
+                    <label>Секции описания</label>
+                    <div id="sections-container"></div>
+                    <button onclick="addSection()" class="btn-add-section">
+                        <i class="fas fa-plus"></i> Добавить секцию
+                    </button>
+                </div>
+                
+                <button onclick="saveCard()" class="btn-save-card">Сохранить карточку</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
+
