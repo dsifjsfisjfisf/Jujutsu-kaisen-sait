@@ -1,11 +1,8 @@
-// ============================================
 // ИНИЦИАЛИЗАЦИЯ
-// ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Сайт загружен, скрипты активны');
 
-    // ---------- ТЕМА ----------
     const savedTheme = localStorage.getItem('jk-theme') || 'blue';
     setTheme(savedTheme);
 
@@ -14,48 +11,38 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // ---------- ЗАГРУЗКА ПОЛЬЗОВАТЕЛЬСКИХ КАРТОЧЕК ----------
+    const contactBtn = document.getElementById('contactBtn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', openContactModal);
+    }
+
     loadUserCardsToSections();
-
-    // ---------- ДЕЛЕГИРОВАНИЕ КЛИКОВ ПО КАРТОЧКАМ ----------
     document.addEventListener('click', handleCardClick);
-
-    // ---------- ССЫЛКИ НА ПЕРСОНАЖЕЙ ----------
     document.addEventListener('click', handleCharacterLinkClick);
-
-    // ---------- СВЯЗАННЫЕ ЭЛЕМЕНТЫ В МОДАЛКАХ ----------
     document.addEventListener('click', handleRelatedLinks);
-
-    // ---------- ЗАКРЫТИЕ МОДАЛОК ----------
     document.addEventListener('click', handleModalClose);
     document.addEventListener('keydown', handleEscape);
-
-    // ---------- НАВИГАЦИЯ ----------
     initSmoothScroll();
-
-    // ---------- МУЗЫКАЛЬНЫЙ ПЛЕЕР ----------
     initMusicPlayers();
 });
 
-// ============================================
 // ОБРАБОТЧИКИ
-// ============================================
 
 function handleCardClick(e) {
     const card = e.target.closest('.card');
     if (!card) return;
 
-    // если это ссылка — ОТМЕНЯЕМ ПЕРЕХОД СРАЗУ
     if (card.tagName === 'A') {
         e.preventDefault();
         e.stopPropagation();
     }
 
-    // если клик по имени персонажа — не открываем карточку
     if (e.target.closest('.character-link')) return;
 
     const modalId = card.getAttribute('data-modal-target');
     if (modalId) {
+        e.preventDefault();
+        e.stopPropagation();
         openModal(modalId);
     }
 }
@@ -87,13 +74,11 @@ function handleRelatedLinks(e) {
 }
 
 function handleModalClose(e) {
-    // крестик
     if (e.target.classList.contains('modal-close')) {
         closeAllModals();
         return;
     }
 
-    // клик по затемнению
     if (e.target.classList.contains('modal')) {
         closeAllModals();
     }
@@ -105,9 +90,7 @@ function handleEscape(e) {
     }
 }
 
-// ============================================
 // МОДАЛКИ
-// ============================================
 
 function openModal(modalId) {
     closeAllModals();
@@ -125,7 +108,6 @@ function openModal(modalId) {
         modal.classList.add('active');
     });
 
-    // Если это музыкальная модалка, инициализируем плеер
     if (modalId.includes('music')) {
         initModalMusicPlayer(modal);
     }
@@ -136,7 +118,6 @@ function closeAllModals() {
         modal.classList.remove('active');
         modal.style.display = 'none';
         
-        // Останавливаем музыку при закрытии
         const audio = modal.querySelector('.hidden-audio');
         if (audio) {
             audio.pause();
@@ -147,9 +128,7 @@ function closeAllModals() {
     document.body.style.overflow = '';
 }
 
-// ============================================
 // ТЕМА
-// ============================================
 
 function toggleTheme() {
     const currentTheme = document.body.classList.contains('red-theme') ? 'red' : 'blue';
@@ -175,34 +154,9 @@ function setTheme(theme) {
     }
 
     localStorage.setItem('jk-theme', theme);
-
-    toggleVideos(theme);
 }
 
-function toggleVideos(theme) {
-    const blueVideo = document.querySelector('.blue-video');
-    const redVideo = document.querySelector('.red-video');
-
-    if (theme === 'red') {
-        if (blueVideo) blueVideo.style.display = 'none';
-        if (redVideo) {
-            redVideo.style.display = 'block';
-            redVideo.currentTime = 0;
-            redVideo.play().catch(() => {});
-        }
-    } else {
-        if (redVideo) redVideo.style.display = 'none';
-        if (blueVideo) {
-            blueVideo.style.display = 'block';
-            blueVideo.currentTime = 0;
-            blueVideo.play().catch(() => {});
-        }
-    }
-}
-
-// ============================================
 // ПЛАВНЫЙ СКРОЛЛ
-// ============================================
 
 function initSmoothScroll() {
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -221,12 +175,9 @@ function initSmoothScroll() {
     });
 }
 
-// ============================================
 // МУЗЫКАЛЬНЫЙ ПЛЕЕР
-// ============================================
 
 function initMusicPlayers() {
-    // Инициализация будет происходить при открытии модалки
 }
 
 function initModalMusicPlayer(modal) {
@@ -248,13 +199,11 @@ function initModalMusicPlayer(modal) {
     if (!audio) return;
 
     let isPlaying = false;
-    let currentVolume = 0.1; // 10% громкости по умолчанию
+    let currentVolume = 0.1;
     audio.volume = currentVolume;
 
-    // Обновляем отображение громкости
     updateVolumeDisplay();
 
-    // Определяем текущий трек и обновляем состояние кнопок
     const currentModalId = modal.id;
     const currentTrackNumber = parseInt(currentModalId.replace('modal-music-', ''));
     updateNavigationButtons();
@@ -265,13 +214,11 @@ function initModalMusicPlayer(modal) {
             audio.pause();
             playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
             isPlaying = false;
-            // Убираем класс playing для скрытия визуализатора
             if (trackCover) trackCover.classList.remove('playing');
         } else {
             audio.play().catch(() => {});
             playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
             isPlaying = true;
-            // Добавляем класс playing для показа визуализатора
             if (trackCover) trackCover.classList.add('playing');
         }
     });
@@ -297,7 +244,7 @@ function initModalMusicPlayer(modal) {
     });
 
     nextBtn.addEventListener('click', () => {
-        if (currentTrackNumber < 6) { // У нас 6 треков
+        if (currentTrackNumber < 6) {
             switchToTrack(currentTrackNumber + 1);
         }
     });
@@ -341,7 +288,7 @@ function initModalMusicPlayer(modal) {
             currentVolume = 0;
             volumeIcon.className = 'fas fa-volume-mute volume-icon';
         } else {
-            audio.volume = 0.1; // Восстанавливаем до 10%
+            audio.volume = 0.1;
             currentVolume = 0.1;
             volumeIcon.className = 'fas fa-volume-down volume-icon';
         }
@@ -363,7 +310,6 @@ function initModalMusicPlayer(modal) {
     }
 
     function updateNavigationButtons() {
-        // Отключаем кнопку "назад" для первого трека
         if (currentTrackNumber === 1) {
             prevBtn.style.opacity = '0.3';
             prevBtn.style.cursor = 'not-allowed';
@@ -372,7 +318,6 @@ function initModalMusicPlayer(modal) {
             prevBtn.style.cursor = 'pointer';
         }
 
-        // Отключаем кнопку "вперед" для последнего трека
         if (currentTrackNumber === 6) {
             nextBtn.style.opacity = '0.3';
             nextBtn.style.cursor = 'not-allowed';
@@ -391,27 +336,21 @@ function initModalMusicPlayer(modal) {
 
 // Функция переключения между треками
 function switchToTrack(trackNumber) {
-    // Закрываем текущее модальное окно
     closeAllModals();
     
-    // Небольшая задержка для анимации закрытия
     setTimeout(() => {
-        // Открываем новое модальное окно
         const newModalId = `modal-music-${trackNumber}`;
         const newModal = document.getElementById(newModalId);
         
         if (newModal) {
-            // Открываем модальное окно
             document.body.style.overflow = 'hidden';
             newModal.style.display = 'block';
             
             requestAnimationFrame(() => {
                 newModal.classList.add('active');
                 
-                // Инициализируем плеер для нового трека
                 initModalMusicPlayer(newModal);
                 
-                // Автоматически запускаем воспроизведение
                 setTimeout(() => {
                     const audio = newModal.querySelector('.hidden-audio');
                     const playPauseBtn = newModal.querySelector('.play-pause-btn');
@@ -420,20 +359,17 @@ function switchToTrack(trackNumber) {
                         audio.play().then(() => {
                             playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
                         }).catch(() => {
-                            // Если автовоспроизведение заблокировано браузером
                             console.log('Автовоспроизведение заблокировано');
                         });
                     }
                 }, 100);
             });
         }
-    }, 300); // Задержка для плавного перехода
+    }, 300);
 }
 
 
-// ============================================
 // ПОЛЬЗОВАТЕЛЬСКИЕ КАРТОЧКИ
-// ============================================
 
 function loadUserCardsToSections() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -441,7 +377,6 @@ function loadUserCardsToSections() {
         return;
     }
 
-    // Группируем карточки по типам
     const cardsByType = {
         character: [],
         technique: [],
@@ -454,7 +389,7 @@ function loadUserCardsToSections() {
         }
     });
 
-    // Добавляем карточки в соответствующие секции
+    //карточки в соответствующие секции
     addCardsToSection('characters', cardsByType.character);
     addCardsToSection('techniques', cardsByType.technique);
     addCardsToSection('domains', cardsByType.domain);
@@ -473,7 +408,7 @@ function addCardsToSection(sectionId, cards) {
         const cardElement = createUserCardElement(card, sectionId);
         grid.appendChild(cardElement);
         
-        // Создаем модальное окно для карточки
+        //модальное окно для карточки
         createUserCardModal(card, sectionId);
     });
 }
@@ -522,7 +457,7 @@ function createUserCardModal(card, sectionId) {
     modal.id = `modal-user-${card.id}`;
     modal.className = 'modal';
     
-    // Применяем пользовательский цвет
+    //пользовательский цвет
     modal.style.setProperty('--user-accent', card.color);
     
     const modalContent = document.createElement('div');
@@ -558,7 +493,7 @@ function createUserCardModal(card, sectionId) {
     modalHero.appendChild(heroImg);
     modalBody.appendChild(modalHero);
     
-    // Добавляем основное описание
+    //основное описание
     const mainSection = document.createElement('div');
     mainSection.className = 'info-section';
     const mainTitle = document.createElement('h3');
@@ -594,4 +529,34 @@ function createUserCardModal(card, sectionId) {
     modal.appendChild(modalContent);
     
     document.body.appendChild(modal);
+}
+
+
+// МОДАЛЬНОЕ ОКНО КОНТАКТОВ
+
+function openContactModal() {
+    const modal = document.getElementById('contact-modal');
+    if (!modal) {
+        console.error('Модальное окно контактов не найдено');
+        return;
+    }
+
+    document.body.style.overflow = 'hidden';
+    modal.style.display = 'block';
+
+    requestAnimationFrame(() => {
+        modal.classList.add('active');
+    });
+}
+
+function closeContactModal() {
+    const modal = document.getElementById('contact-modal');
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
 }
