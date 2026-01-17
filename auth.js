@@ -1,7 +1,3 @@
-// ============================================
-// СИСТЕМА АУТЕНТИФИКАЦИИ И ПРОФИЛЯ
-// ============================================
-
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     initAuth();
@@ -25,7 +21,6 @@ function checkAuthStatus() {
     }
 }
 
-// Открыть модальное окно авторизации
 function openAuthModal() {
     const modal = document.getElementById('auth-modal');
     if (modal) {
@@ -38,7 +33,7 @@ function openAuthModal() {
 function openProfile() {
     const profilePage = document.getElementById('profile-page');
     if (profilePage) {
-        currentCommentsPage = 1; // Сброс страницы комментариев
+        currentCommentsPage = 1;
         loadUserProfile();
         profilePage.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -54,7 +49,7 @@ function closeProfilePage() {
     }
 }
 
-// Закрытие модального окна профиля (для совместимости)
+// Закрытие модального окна профиля
 function closeProfileModal() {
     closeProfilePage();
 }
@@ -101,13 +96,11 @@ function register() {
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     
-    // Автоматический вход
     localStorage.setItem('currentUser', JSON.stringify(newUser));
     
     closeAuthModal();
     checkAuthStatus();
     
-    // Перезагружаем карточки
     if (typeof loadUserCardsToSections === 'function') {
         document.querySelectorAll('[data-modal-target^="modal-user-"]').forEach(el => el.remove());
         document.querySelectorAll('[id^="modal-user-"]').forEach(el => el.remove());
@@ -140,7 +133,7 @@ function login() {
     closeAuthModal();
     checkAuthStatus();
     
-    // Перезагружаем карточки
+    // Перезагрузка карточек
     if (typeof loadUserCardsToSections === 'function') {
         document.querySelectorAll('[data-modal-target^="modal-user-"]').forEach(el => el.remove());
         document.querySelectorAll('[id^="modal-user-"]').forEach(el => el.remove());
@@ -157,7 +150,7 @@ function logout() {
         checkAuthStatus();
         closeProfilePage();
         
-        // Удаляем пользовательские карточки с главной страницы
+
         document.querySelectorAll('[data-modal-target^="modal-user-"]').forEach(el => el.remove());
         document.querySelectorAll('[id^="modal-user-"]').forEach(el => el.remove());
     }
@@ -169,12 +162,10 @@ function loadUserProfile(userId = null) {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     
     if (userId) {
-        // Загружаем профиль другого пользователя
         const users = JSON.parse(localStorage.getItem('users') || '[]');
         user = users.find(u => u.id === userId);
         if (!user) return;
     } else {
-        // Загружаем свой профиль
         user = currentUser;
         if (!user) return;
     }
@@ -207,12 +198,10 @@ function loadUserProfile(userId = null) {
     let bannerMedia = document.getElementById('profile-banner-img');
     
     if (user.banner) {
-        // Удаляем старый элемент если это видео
         const oldVideo = bannerContainer.querySelector('video');
         if (oldVideo) oldVideo.remove();
         
         if (user.bannerType === 'video') {
-            // Скрываем img и создаем video
             if (bannerMedia) bannerMedia.style.display = 'none';
             
             let video = bannerContainer.querySelector('video');
@@ -234,7 +223,6 @@ function loadUserProfile(userId = null) {
             bannerContainer.style.background = 'transparent';
         }
     } else {
-        // Если баннера нет, показываем синий градиент
         if (bannerMedia) {
             bannerMedia.src = '';
             bannerMedia.style.display = 'none';
@@ -244,13 +232,10 @@ function loadUserProfile(userId = null) {
         bannerContainer.style.background = 'linear-gradient(135deg, var(--accent) 0%, rgba(0, 136, 255, 0.6) 100%)';
     }
     
-    // Загрузка пользовательских карточек
     loadUserCardsInProfile(user);
     
-    // Загрузка комментариев
     loadComments(user.id);
     
-    // Инициализация поиска
     if (isOwnProfile) {
         initUserSearch();
     }
@@ -309,7 +294,6 @@ function openUserCardModal(cardId) {
 function openCardCreator() {
     const modal = document.getElementById('card-creator-modal');
     if (modal) {
-        // Сброс формы
         document.getElementById('card-type-selector').style.display = 'block';
         document.getElementById('card-creator-form').style.display = 'none';
         
@@ -400,13 +384,9 @@ function saveCard() {
     
     closeCardCreatorModal();
     loadUserCardsInProfile(currentUser);
-    
-    // Перезагружаем карточки на главной странице
     if (typeof loadUserCardsToSections === 'function') {
-        // Удаляем старые пользовательские карточки
         document.querySelectorAll('[data-modal-target^="modal-user-"]').forEach(el => el.remove());
         document.querySelectorAll('[id^="modal-user-"]').forEach(el => el.remove());
-        // Загружаем заново
         loadUserCardsToSections();
     }
     
@@ -448,7 +428,7 @@ function deleteCard(cardId) {
     
     loadUserCardsInProfile(currentUser);
     
-    // Перезагружаем карточки на главной странице
+    // Перезагрузка карточек на главной странице
     if (typeof loadUserCardsToSections === 'function') {
         document.querySelectorAll('[data-modal-target^="modal-user-"]').forEach(el => el.remove());
         document.querySelectorAll('[id^="modal-user-"]').forEach(el => el.remove());
@@ -537,7 +517,6 @@ function showRegisterForm() {
     document.getElementById('register-form').style.display = 'block';
 }
 
-// Инициализация
 function initAuth() {
     // Закрытие модальных окон по клику вне их
     document.addEventListener('click', (e) => {
@@ -550,10 +529,7 @@ function initAuth() {
     });
 }
 
-
-// ============================================
 // БАННЕР ПРОФИЛЯ
-// ============================================
 
 function changeBanner() {
     document.getElementById('banner-upload').click();
@@ -586,15 +562,13 @@ function uploadBanner(input) {
     reader.readAsDataURL(file);
 }
 
-// ============================================
 // ПОИСК ПОЛЬЗОВАТЕЛЕЙ
-// ============================================
 
 function initUserSearch() {
     const searchInput = document.getElementById('user-search-input');
     if (!searchInput) return;
     
-    // Поиск по вводу (автодополнение)
+    // Поиск по вводу
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.trim().toLowerCase();
         if (query.length < 2) {
@@ -666,13 +640,11 @@ function searchUsers(query) {
 function openUserProfile(userId) {
     document.getElementById('user-search-input').value = '';
     document.getElementById('search-results').innerHTML = '';
-    currentCommentsPage = 1; // Сброс страницы комментариев
+    currentCommentsPage = 1;
     loadUserProfile(userId);
 }
 
-// ============================================
 // КОММЕНТАРИИ
-// ============================================
 
 let currentCommentsPage = 1;
 const commentsPerPage = 5;
@@ -699,7 +671,6 @@ function loadComments(userId) {
         });
     }
     
-    // Пагинация
     renderPagination(totalPages, userId);
 }
 
@@ -773,7 +744,6 @@ function postComment() {
         return;
     }
     
-    // Получаем ID профиля, на котором оставляем комментарий
     const profileNickname = document.getElementById('profile-nickname').textContent;
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const profileOwner = users.find(u => u.nickname === profileNickname);
